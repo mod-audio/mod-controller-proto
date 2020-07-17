@@ -127,11 +127,16 @@
 //HOST action: -
 #define CMD_TUNER                     "ts %f %s %i"
 
-// tuner on/off
+// tuner on
 //responese: `r 0`
-//HMI action: TODO: turn on / off the tuner from the system
-//HOST action: turn on / off the tuner
-#define CMD_TUNER_ON                  "t %i"
+//HMI action: TODO: turn on the tuner from the system
+//HOST action: turn on the tuner
+#define CMD_TUNER_ON                  "tn"
+// tuner off
+//responese: `r 0`
+//HMI action: TODO: turn off the tuner from the system
+//HOST action: turn off the tuner
+#define CMD_TUNER_OFF                  "tf"
 // tuner_input <input>
 //responese: `r 0`
 //HMI action: -
@@ -188,12 +193,6 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 //HOST action: store the selected user profile with current settings
 #define CMD_STORE_PROFILE             "s_p %i"
 
-//get the current profile that is loaded
-//responese: `resp <profile>`
-//HMI action: -
-//HOST action: returns the current user profile
-#define CMD_GET_PROFILE               "g_p" 
-
 /*
 ********************************
     Menu Item ID's
@@ -216,6 +215,7 @@ Each menu item in the MOD OS has its own ID, this allows for it to be easily cha
 #define MENU_ID_BYPASS1				11
 #define MENU_ID_BYPASS2				12
 #define MENU_ID_BRIGHTNESS   		13
+#define MENU_ID_CURRENT_PROFILE		14
 //duo
 #define MENU_ID_FOOTSWITCH_NAV    	30
 //duox
@@ -224,6 +224,34 @@ Each menu item in the MOD OS has its own ID, this allows for it to be easily cha
 #define MENU_ID_MASTER_VOL_PORT		42
 #define MENU_ID_EXP_MODE			43
 //dwarf     
+
+
+#define MENU_TOP_ID					44
+/*
+********************************
+    Control Property definitions
+********************************
+*/
+
+//// Control propertires definitions
+#define CONTROL_PROP_LINEAR         0
+#define CONTROL_PROP_BYPASS         1
+#define CONTROL_PROP_TAP_TEMPO      2
+#define CONTROL_PROP_ENUMERATION    4
+#define CONTROL_PROP_SCALE_POINTS   8
+#define CONTROL_PROP_TRIGGER        16
+#define CONTROL_PROP_TOGGLED        32
+#define CONTROL_PROP_LOGARITHMIC    64
+#define CONTROL_PROP_INTEGER        128
+#define CONTROL_PROP_REVERSE_ENUM   256
+
+
+//// Banks functions definition
+#define BANK_FUNC_NONE              0
+#define BANK_FUNC_TRUE_BYPASS       1
+#define BANK_FUNC_PEDALBOARD_NEXT   2
+#define BANK_FUNC_PEDALBOARD_PREV   3
+#define BANK_FUNC_AMOUNT            4
 
 /*
 ********************************
@@ -305,7 +333,9 @@ Each menu item in the MOD OS has its own ID, this allows for it to be easily cha
 
 //TODO AS DEVELOPMENT HAS NOT STARTED
 
-
+#define MOD_DUO_COMMAND_COUNT 		36
+#define MOD_DUOX_COMMAND_COUNT 		35
+#define MOD_DWARF_COMMAND_COUNT 	30
 
 
 
