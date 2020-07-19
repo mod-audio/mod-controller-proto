@@ -56,13 +56,13 @@ with open(protofile, 'r') as fh:
             model, value = line.replace("COMMAND_COUNT_","",1).split()
 
             if model not in validmodels:
-                print("invalid model in line", line)
+                print("ERROR: invalid model in line", line)
                 sys.exit(2)
 
             try:
                 intvalue = int(value)
             except:
-                print("invalid value in line", line)
+                print("ERROR: invalid value in line", line)
                 sys.exit(2)
 
             cmdcount[model] = intvalue
@@ -77,7 +77,7 @@ with open(protofile, 'r') as fh:
             ctrlprops.append(line)
 
         else:
-            print("unhandled define in line", line)
+            print("ERROR: unhandled define in line", line)
             sys.exit(2)
 
 # tests follow, flag is set if we should exit with error
@@ -88,7 +88,7 @@ for model in validmodels:
     realcount = len(cmds['ALL']) + len(cmds[model])
     if cmdcount[model] != realcount:
         error = True
-        print("command count for", model, "does not match value in protocol file")
+        print("ERROR: command count for", model, "does not match value in protocol file")
         print(" file has {}, but real value is {}".format(cmdcount[model], realcount))
 
 # test 2: cmds must be unique
@@ -101,7 +101,7 @@ for cmd in cmds['ALL']:
         cmds_ids.append(cmd_id)
     else:
         error = True
-        print("command", cmd_id, "is duplicated")
+        print("ERROR: command", cmd_id, "is duplicated")
 
 for model in validmodels:
     model_cmds_ids = cmds_ids.copy()
@@ -113,7 +113,7 @@ for model in validmodels:
             model_cmds_ids.append(cmd_id)
         else:
             error = True
-            print("command", cmd_id, "is duplicated in the device-specific", model)
+            print("ERROR: command", cmd_id, "is duplicated in the device-specific", model)
 
 # test 3: menu ids must be unique
 menus_ids = []
@@ -125,14 +125,14 @@ for menu in menus:
         int_menu_id = int(menu_id)
     except:
         error = True
-        print("menu define", menu, "cannot be converted to integer")
+        print("ERROR: menu define", menu, "cannot be converted to integer")
         continue
 
     if int_menu_id not in menus_ids:
         menus_ids.append(int_menu_id)
     else:
         error = True
-        print("menu", menu_id, "is duplicated")
+        print("ERROR: menu", menu_id, "is duplicated")
 
 # test 4: bank functions must be unique
 bankfuncs_ids = []
@@ -144,14 +144,14 @@ for bankfunc in bankfuncs:
         int_bankfunc_id = int(bankfunc_id)
     except:
         error = True
-        print("bank function define", bankfunc, "cannot be converted to integer")
+        print("ERROR: bank function define", bankfunc, "cannot be converted to integer")
         continue
 
     if int_bankfunc_id not in bankfuncs_ids:
         bankfuncs_ids.append(int_bankfunc_id)
     else:
         error = True
-        print("bank function", bankfunc_id, "is duplicated")
+        print("ERROR: bank function", bankfunc_id, "is duplicated")
 
 # test 5: control properties must be unique and a real flag
 ctrlprops_ids = []
@@ -164,18 +164,18 @@ for ctrlprop in ctrlprops:
         int_ctrlprop_id = int(ctrlprop_id)
     except:
         error = True
-        print("control property define", ctrlprop, "cannot be converted to integer")
+        print("ERROR: control property define", ctrlprop, "cannot be converted to integer")
         continue
 
     if int_ctrlprop_id not in ctrlprops_ids:
         ctrlprops_ids.append(int_ctrlprop_id)
     else:
         error = True
-        print("control property", ctrlprop_id, "is duplicated")
+        print("ERROR: control property", ctrlprop_id, "is duplicated")
 
     if int_ctrlprop_id not in valid_flags:
         error = True
-        print("control property", ctrlprop_id, "is not a valid flag (must be a power of 2)")
+        print("ERROR: control property", ctrlprop_id, "is not a valid flag (must be a power of 2)")
 
 # exit now in case of error
 #if error:
