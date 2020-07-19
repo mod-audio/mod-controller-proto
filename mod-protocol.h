@@ -226,7 +226,7 @@ Each menu item in the MOD OS has its own ID, this allows for it to be easily cha
 //dwarf     
 
 
-#define MENU_TOP_ID					44
+#define MENU_ID_TOP					44
 /*
 ********************************
     Control Property definitions
@@ -260,38 +260,38 @@ Each menu item in the MOD OS has its own ID, this allows for it to be easily cha
 */
 
 //the HMI is ready to boot
-#define CMD_BOOT_DUO_HMI              "boot %i %i %s ..."
+#define CMD_DUO_BOOT              "boot %i %i %s ..."
 
 //set display brightness  <brightness>
 //responese: `r 0`
 //HMI action: sets display brightness <brightness>
 //HOST action: -
-#define CMD_BRIGHTNESS_SET            "s_b %i"
+#define CMD_DUO_BRIGHTNESS_SET            "s_b %i"
 
 //enable footswitch bank navigation [uint8_t]<foot>
 //responese: `r 0`
 //HMI action: turns on bank navigation on footswitch <foot>
 //HOST action: -
-#define CMD_FOOT_NAVIG                "fn %i"
+#define CMD_DUO_FOOT_NAVIG                "fn %i"
 
 //TODO, IS THIS COMMAND STILL USED?!?
 // bank_config <hw_id> <function>
 //responese: `r 0`
 //HMI action: turns on bank navigation on footswitch <hw_id> with <function>
 //HOST action: -
-#define CMD_BANK_CONFIG               "bc %i %i"
+#define CMD_DUO_BANK_CONFIG               "bc %i %i"
 
 // control_next <hw_id>
 //responese: `r 0`
 //HMI action: -
 //HOST action: reassigns control <hw_id> with a new actuator
-#define CMD_CONTROL_NEXT              "n %i"
+#define CMD_DUO_CONTROL_NEXT              "n %i"
 
 // control_index_set <hw_id> <current_index> <total_index>
 //responese: `r 0`
 //HMI action: saves and possibly displays the control indexes for control <hw_id>
 //HOST action: -
-#define CMD_CONTROL_INDEX_SET             "si %i %i %i"
+#define CMD_DUO_CONTROL_INDEX_SET             "si %i %i %i"
 /*
 ********************************
     DuoX Specific commands
@@ -299,31 +299,31 @@ Each menu item in the MOD OS has its own ID, this allows for it to be easily cha
 */
 
 //the HMI is ready to boot
-#define CMD_BOOT_DUOX_HMI             "boot %i %i %s ..."
+#define CMD_DUOX_BOOT             "boot %i %i %s ..."
 
 //request the next page <page_to_load>
 //responese: `r 0`
 //HMI action: -
 //HOST action: reassigns all controls to the next control page when available
-#define CMD_NEXT_PAGE             "lp %i"
+#define CMD_DUOX_NEXT_PAGE             "lp %i"
 
 //save a snapshot <snapshot_id>
 //responese: `r 0`
 //HMI action: -
 //HOST action: save all controls as a snapshot with index <snapshot_id> 
-#define CMD_SAVE_SNAPSHOT         "ss %i"
+#define CMD_DUOX_SAVE_SNAPSHOT         "ss %i"
 
 //load a snapshot <snapshot_id>
 //responese: `r 0`
 //HMI action: -
 //HOST action: set all controls to a snapshot with index <snapshot_id> 
-#define CMD_LOAD_SNAPSHOT         "sl %i"
+#define CMD_DUOX_LOAD_SNAPSHOT         "sl %i"
 
 //clear a snapshot <snapshot_id>
 //responese: `r 0`
 //HMI action: -
 //HOST action: clear a snapshot with index <snapshot_id> 
-#define CMD_CLEAR_SNAPSHOT        "ss_c"
+#define CMD_DUOX_CLEAR_SNAPSHOT        "ss_c"
 
 /*
 ********************************
@@ -333,14 +333,6 @@ Each menu item in the MOD OS has its own ID, this allows for it to be easily cha
 
 //TODO AS DEVELOPMENT HAS NOT STARTED
 
-#define MOD_DUO_COMMAND_COUNT 		36
-#define MOD_DUOX_COMMAND_COUNT 		35
-#define MOD_DWARF_COMMAND_COUNT 	30
-
-
-
-
-
-
-
-
+#define COMMAND_COUNT_DUO   36
+#define COMMAND_COUNT_DUOX  35
+#define COMMAND_COUNT_DWARF 30
