@@ -178,8 +178,8 @@ for ctrlprop in ctrlprops:
         print("ERROR: control property", ctrlprop_id, "is not a valid flag (must be a power of 2)")
 
 # exit now in case of error
-#if error:
-    #sys.exit(2)
+if error:
+    sys.exit(2)
 
 # now we can write to the usage file, which will test building of the protocol in C code
 with open(usagefile, 'w') as fh:
