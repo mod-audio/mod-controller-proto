@@ -244,7 +244,7 @@ Each menu item in the MOD OS has its own ID, this allows for it to be easily cha
 #define CONTROL_PROP_LOGARITHMIC    64
 #define CONTROL_PROP_INTEGER        128
 #define CONTROL_PROP_REVERSE_ENUM   256
-
+#define CONTROL_PROP_MOMENTARY      512
 
 //// Banks functions definition
 #define BANK_FUNC_NONE              0
