@@ -20,9 +20,10 @@ cmds.update({'ALL':[]})
 
 cmdcount = dict((model,0) for model in validmodels)
 
-menus = []
 bankfuncs = []
-ctrlprops = []
+menus = []
+
+flags = {'ALL':[]}
 
 with open(protofile, 'r') as fh:
     stopcounter = 0
@@ -67,14 +68,26 @@ with open(protofile, 'r') as fh:
 
             cmdcount[model] = intvalue
 
-        elif line.startswith("MENU_ID_"):
-            menus.append(line)
-
         elif line.startswith("BANK_FUNC_"):
             bankfuncs.append(line)
 
-        elif line.startswith("CONTROL_PROP_"):
-            ctrlprops.append(line)
+        elif line.startswith("MENU_ID_"):
+            menus.append(line)
+
+        elif line.startswith("FLAG_"):
+            flagdata = line.replace('FLAG_','',1).split('_',1)
+            if len(flagdata) != 2:
+                print("ERROR: incorrect flag syntax (1) in line", line)
+                sys.exit(2)
+            flagtype, flagdata = flagdata
+            flagdata = flagdata.split(None,1)
+            if len(flagdata) != 2:
+                print("ERROR: incorrect flag syntax (2) in line", line)
+                sys.exit(2)
+            if flagtype not in flags:
+                flags[flagtype] = []
+            flags[flagtype].append(flagdata)
+            flags['ALL'].append((flagtype+'_'+flagdata[0], flagdata[1]))
 
         else:
             print("ERROR: unhandled define in line", line)
@@ -153,29 +166,38 @@ for bankfunc in bankfuncs:
         error = True
         print("ERROR: bank function", bankfunc_id, "is duplicated")
 
-# test 5: control properties must be unique and a real flag
-ctrlprops_ids = []
+# test 5: check flags, must be unique and a real flag
+flags_all = flags.pop('ALL')
+flags_ids = {'ALL':[]}
 valid_flags = (0,) + tuple(1 << v for v in range(16))
 
-for ctrlprop in ctrlprops:
-    ctrlprop_id = ctrlprop.split(None,1)[1].strip()
-
-    try:
-        int_ctrlprop_id = int(ctrlprop_id)
-    except:
-        error = True
-        print("ERROR: control property define", ctrlprop, "cannot be converted to integer")
-        continue
-
-    if int_ctrlprop_id not in ctrlprops_ids:
-        ctrlprops_ids.append(int_ctrlprop_id)
+for flagname, flagvalue in flags_all:
+    if flagname not in flags_ids['ALL']:
+        flags_ids['ALL'].append(flagname)
     else:
         error = True
-        print("ERROR: control property", ctrlprop_id, "is duplicated")
+        print("ERROR: flag value {} for {} is duplicated".format(flagvalue, flagname))
 
-    if int_ctrlprop_id not in valid_flags:
-        error = True
-        print("ERROR: control property", ctrlprop_id, "is not a valid flag (must be a power of 2)")
+for flagtype, flagdata in flags.items():
+    flags_ids[flagtype] = []
+
+    for flagname, flagvalue in flagdata:
+        try:
+            flagvalue = int(flagvalue, 16)
+        except:
+            error = True
+            print("ERROR: flag value {} for {} cannot be converted to integer".format(flagvalue, flagname))
+            continue
+
+        if flagvalue not in flags_ids[flagtype]:
+            flags_ids[flagtype].append(flagvalue)
+        else:
+            error = True
+            print("ERROR: flag value {} for {} is duplicated".format(flagvalue, flagname))
+
+        if flagvalue not in valid_flags:
+            error = True
+            print("ERROR: flag value {} for {} is not a valid flag (must be a power of 2)".format(flagvalue, flagname))
 
 # exit now in case of error
 if error:
