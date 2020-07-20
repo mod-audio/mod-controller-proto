@@ -55,7 +55,7 @@
 #define CMD_GUI_DISCONNECTED          "ud"
 
 // control_add <hw_id> <label> <control_prop> <unit> <value> <max> <min> <steps> 
-//             [scale_point_count] [scale_point_flag] {[scale_point1_label] [scale_point1_value]}...
+//             [scale_point_count] [scale_point_flag] [scale_point_index] {[scale_point1_label] [scale_point1_value]}...
 //responese: `r 0`
 //HMI action: assign a new hw control
 //HOST action: -
