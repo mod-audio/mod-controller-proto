@@ -233,37 +233,37 @@ Each menu item in the MOD OS has its own ID, this allows for it to be easily cha
 ********************************
 */
 
-//// Control propertires definitions
-#define CONTROL_PROP_LINEAR         0
-#define CONTROL_PROP_BYPASS         1
-#define CONTROL_PROP_TAP_TEMPO      2
-#define CONTROL_PROP_ENUMERATION    4
-#define CONTROL_PROP_SCALE_POINTS   8
-#define CONTROL_PROP_TRIGGER        16
-#define CONTROL_PROP_TOGGLED        32
-#define CONTROL_PROP_LOGARITHMIC    64
-#define CONTROL_PROP_INTEGER        128
-#define CONTROL_PROP_REVERSE_ENUM   256
-#define CONTROL_PROP_MOMENTARY      512
-
 //// Banks functions definition
-#define BANK_FUNC_NONE              0
-#define BANK_FUNC_TRUE_BYPASS       1
-#define BANK_FUNC_PEDALBOARD_NEXT   2
-#define BANK_FUNC_PEDALBOARD_PREV   3
-#define BANK_FUNC_AMOUNT            4
+#define BANK_FUNC_NONE                  0
+#define BANK_FUNC_TRUE_BYPASS           1
+#define BANK_FUNC_PEDALBOARD_NEXT       2
+#define BANK_FUNC_PEDALBOARD_PREV       3
+#define BANK_FUNC_AMOUNT                4
 
 //command bitmask definitions
+//// Control propertires definitions
+#define FLAG_CONTROL_LINEAR             0x000
+#define FLAG_CONTROL_BYPASS             0x001
+#define FLAG_CONTROL_TAP_TEMPO          0x002
+#define FLAG_CONTROL_ENUMERATION        0x004
+#define FLAG_CONTROL_SCALE_POINTS       0x008
+#define FLAG_CONTROL_TRIGGER            0x010
+#define FLAG_CONTROL_TOGGLED            0x020
+#define FLAG_CONTROL_LOGARITHMIC        0x040
+#define FLAG_CONTROL_INTEGER            0x080
+#define FLAG_CONTROL_REVERSE_ENUM       0x100
+#define FLAG_CONTROL_MOMENTARY          0x200
+
 //list pagination bitmasks
-#define BM_NP_PAGE_UP         (1 << 1)
-#define BM_NP_WRAP_AROUND     (1 << 2)
-#define BM_NP_INITIAL_REQ     (1 << 3)
+#define FLAG_PAGINATION_PAGE_UP         0x1
+#define FLAG_PAGINATION_WRAP_AROUND     0x2
+#define FLAG_PAGINATION_INITIAL_REQ     0x4
 
 //scalepoints bitmasks
-#define BM_SCALPOINT_PAGINATED   		(1 << 0)
-#define BM_SCALPOINT_WRAP_AROUND 		(1 << 1)
-#define BM_SCALPOINT_END_PAGE    		(1 << 2)
-#define BM_SCALPOINT_ALT_LED_COLOR		(1 << 3)
+#define FLAG_SCALEPOINT_PAGINATED       0x1
+#define FLAG_SCALEPOINT_WRAP_AROUND     0x2
+#define FLAG_SCALEPOINT_END_PAGE        0x4
+#define FLAG_SCALEPOINT_ALT_LED_COLOR   0x8
 
 /*
 ********************************
