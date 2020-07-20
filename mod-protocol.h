@@ -16,7 +16,7 @@
 
 // say <message>
 //responese: `<message>`
-#define CMD_SAY                       "s %s ..."
+#define CMD_SAY                       "say %s ..."
 
 // led <led_id> <red> <green> <blue>
 //responese: `r 0`
@@ -107,7 +107,7 @@
 //responese: `r 0`
 //HMI action: -
 //HOST action: loads the requested pedalboard 
-#define CMD_LOAD_PEDALBOARD                "pb %i %s"
+#define CMD_LOAD_PEDALBOARD           "pb %i %s"
 
 // pedalboard_reset
 //responese: `r 0`
@@ -120,6 +120,18 @@
 //HMI action: -
 //HOST action: saves the pedalboard in the current state
 #define CMD_PEDALBOARD_SAVE           "ps"
+
+//set the name of the current pedalboard
+//responese: `r 0`
+//HMI action: save and possibly display the new pedalboard name
+//HOST action: -
+#define CMD_PB_NAME_SET               "pn %s ..."
+
+//clear both snapshots and controls 
+//responese: `r 0`
+//HMI action: clear all pedalboard related items
+//HOST action: -
+#define CMD_CLEAR_PEDALBOARD           "pcl"
 
 // tuner <frequency> <note> <cents>
 //responese: `r 0`
@@ -136,7 +148,7 @@
 //responese: `r 0`
 //HMI action: TODO: turn off the tuner from the system
 //HOST action: turn off the tuner
-#define CMD_TUNER_OFF                  "tf"
+#define CMD_TUNER_OFF                 "tf"
 // tuner_input <input>
 //responese: `r 0`
 //HMI action: -
@@ -156,18 +168,6 @@
 //HOST action: boot into restore mode
 #define CMD_RESTORE                   "restore"
 
-//set the name of the current pedalboard
-//responese: `r 0`
-//HMI action: save and possibly display the new pedalboard name
-//HOST action: -
-#define CMD_PB_NAME_SET               "s_p %s ..."
-
-//clear both snapshots and controls 
-//responese: `r 0`
-//HMI action: clear all pedalboard related items
-//HOST action: -
-#define CMD_CLEAR_PEDALBOARD              "pb_cl"
-
 /*
 ********************************
     SHARED MENU COMMANDS
@@ -179,19 +179,19 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 //HMI action: change the setting in the menu acourding to the settings ID
 //HOST action: change the setting in the system acourding to the settings ID
 //if there is only 1 argument given, the value of that argument will be returned
-#define CMD_MENU_ITEM_CHANGE              "c %i %i ..."
+#define CMD_MENU_ITEM_CHANGE          "c %i %i ..."
 
 //get profile data command <int profile>
 //responese: `r 0`
 //HMI action: -
 //HOST action: loads the selected user profile
-#define CMD_LOAD_PROFILE              "r_p %i"
+#define CMD_LOAD_PROFILE              "upr %i"
 
 //store the current profile in mod-ui
 //responese: `r 0`
 //HMI action: -
 //HOST action: store the selected user profile with current settings
-#define CMD_STORE_PROFILE             "s_p %i"
+#define CMD_STORE_PROFILE             "ups %i"
 
 /*
 ********************************
@@ -266,7 +266,7 @@ Each menu item in the MOD OS has its own ID, this allows for it to be easily cha
 //responese: `r 0`
 //HMI action: sets display brightness <brightness>
 //HOST action: -
-#define CMD_DUO_BRIGHTNESS_SET            "s_b %i"
+#define CMD_DUO_BRIGHTNESS_SET            "bs %i"
 
 //enable footswitch bank navigation [uint8_t]<foot>
 //responese: `r 0`
@@ -291,7 +291,7 @@ Each menu item in the MOD OS has its own ID, this allows for it to be easily cha
 //responese: `r 0`
 //HMI action: saves and possibly displays the control indexes for control <hw_id>
 //HOST action: -
-#define CMD_DUO_CONTROL_INDEX_SET             "si %i %i %i"
+#define CMD_DUO_CONTROL_INDEX_SET          "si %i %i %i"
 /*
 ********************************
     DuoX Specific commands
@@ -323,7 +323,7 @@ Each menu item in the MOD OS has its own ID, this allows for it to be easily cha
 //responese: `r 0`
 //HMI action: -
 //HOST action: clear a snapshot with index <snapshot_id> 
-#define CMD_DUOX_CLEAR_SNAPSHOT        "ss_c"
+#define CMD_DUOX_CLEAR_SNAPSHOT        "sc"
 
 /*
 ********************************
