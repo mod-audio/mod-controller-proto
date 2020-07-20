@@ -16,6 +16,7 @@ The protocol and its header file must follow these strict rules:
 
  5. Bank function IDs must be unique
 
- 6. Control properties are bitmask flags, so they must be unique and a power of 2
+ 6. Flags are hexadecimal bitmask values, so they must be unique and a power of 2  
+    Their name syntax should be `FLAG_<key>_<name>`
 
 Running `make` will run a script and build the protocol in C to ensure these rules are being followed.
