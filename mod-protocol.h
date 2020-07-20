@@ -253,6 +253,18 @@ Each menu item in the MOD OS has its own ID, this allows for it to be easily cha
 #define BANK_FUNC_PEDALBOARD_PREV   3
 #define BANK_FUNC_AMOUNT            4
 
+//command bitmask definitions
+//list pagination bitmasks
+#define BM_NP_PAGE_UP         (1 << 1)
+#define BM_NP_WRAP_AROUND     (1 << 2)
+#define BM_NP_INITIAL_REQ     (1 << 3)
+
+//scalepoints bitmasks
+#define BM_SCALPOINT_PAGINATED   		(1 << 0)
+#define BM_SCALPOINT_WRAP_AROUND 		(1 << 1)
+#define BM_SCALPOINT_END_PAGE    		(1 << 2)
+#define BM_SCALPOINT_ALT_LED_COLOR		(1 << 3)
+
 /*
 ********************************
     Duo Specific commands
