@@ -274,12 +274,6 @@ Each menu item in the MOD OS has its own ID, this allows for it to be easily cha
 //the HMI is ready to boot
 #define CMD_DUO_BOOT              "boot %i %i %s ..."
 
-//set display brightness  <brightness>
-//responese: `r 0`
-//HMI action: sets display brightness <brightness>
-//HOST action: -
-#define CMD_DUO_BRIGHTNESS_SET            "bs %i"
-
 //enable footswitch bank navigation [uint8_t]<foot>
 //responese: `r 0`
 //HMI action: turns on bank navigation on footswitch <foot>
@@ -345,6 +339,6 @@ Each menu item in the MOD OS has its own ID, this allows for it to be easily cha
 
 //TODO AS DEVELOPMENT HAS NOT STARTED
 
-#define COMMAND_COUNT_DUO   36
+#define COMMAND_COUNT_DUO   35
 #define COMMAND_COUNT_DUOX  35
 #define COMMAND_COUNT_DWARF 30
