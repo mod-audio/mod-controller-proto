@@ -290,7 +290,7 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 #define BANK_FUNC_TRUE_BYPASS           1
 #define BANK_FUNC_PEDALBOARD_NEXT       2
 #define BANK_FUNC_PEDALBOARD_PREV       3
-#define BANK_FUNC_AMOUNT                4
+#define BANK_FUNC_COUNT                 4
 
 /*
 ********************************
