@@ -144,11 +144,13 @@
 //HMI action: TODO: turn on the tuner from the system
 //HOST action: turn on the tuner
 #define CMD_TUNER_ON                  "tn"
+
 // tuner off
 //response: `r 0`
 //HMI action: TODO: turn off the tuner from the system
 //HOST action: turn off the tuner
 #define CMD_TUNER_OFF                 "tf"
+
 // tuner_input <input>
 //response: `r 0`
 //HMI action: -
@@ -161,7 +163,6 @@
 //HOST action: -
 #define CMD_RESPONSE                  "r %i ..."
 
-
 // reboot in restore mode
 //response: `r 0`
 //HMI action: -
@@ -173,7 +174,8 @@
     SHARED MENU COMMANDS
 ********************************
 Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but some have their dedicated
-*/    
+*/
+
 //change a menu setting [uint8_t]<menu_item_id> [uint16_t]<menu_item_value>
 //response: `r 0`
 //HMI action: change the setting in the menu acourding to the settings ID
@@ -197,36 +199,36 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 ********************************
     Menu Item ID's
 ********************************
-
 Each menu item in the MOD OS has its own ID, this allows for it to be easily changed and parsed to both sides of the system
-*/  
+*/
+
 //shared
-#define MENU_ID_SL_IN 				0
-#define MENU_ID_SL_OUT 				1
-#define MENU_ID_TUNER_MUTE 			2
-#define MENU_ID_QUICK_BYPASS 		3
-#define MENU_ID_PLAY_STATUS			4
-#define MENU_ID_MIDI_CLK_SOURCE		5
-#define MENU_ID_MIDI_CLK_SEND		6
-#define MENU_ID_SNAPSHOT_PRGCHGE   	7
-#define MENU_ID_PB_PRGCHNGE        	8
-#define MENU_ID_TEMPO				9
-#define MENU_ID_BEATS_PER_BAR		10
-#define MENU_ID_BYPASS1				11
-#define MENU_ID_BYPASS2				12
-#define MENU_ID_BRIGHTNESS   		13
-#define MENU_ID_CURRENT_PROFILE		14
+#define MENU_ID_SL_IN                   0
+#define MENU_ID_SL_OUT                  1
+#define MENU_ID_TUNER_MUTE              2
+#define MENU_ID_QUICK_BYPASS            3
+#define MENU_ID_PLAY_STATUS             4
+#define MENU_ID_MIDI_CLK_SOURCE         5
+#define MENU_ID_MIDI_CLK_SEND           6
+#define MENU_ID_SNAPSHOT_PRGCHGE        7
+#define MENU_ID_PB_PRGCHNGE             8
+#define MENU_ID_TEMPO                   9
+#define MENU_ID_BEATS_PER_BAR           10
+#define MENU_ID_BYPASS1                 11
+#define MENU_ID_BYPASS2                 12
+#define MENU_ID_BRIGHTNESS              13
+#define MENU_ID_CURRENT_PROFILE         14
 //duo
-#define MENU_ID_FOOTSWITCH_NAV    	30
+#define MENU_ID_FOOTSWITCH_NAV          30
 //duox
-#define MENU_ID_EXP_CV_INPUT		40
-#define MENU_ID_HP_CV_OUTPUT		41
-#define MENU_ID_MASTER_VOL_PORT		42
-#define MENU_ID_EXP_MODE			43
-//dwarf     
+#define MENU_ID_EXP_CV_INPUT            40
+#define MENU_ID_HP_CV_OUTPUT            41
+#define MENU_ID_MASTER_VOL_PORT         42
+#define MENU_ID_EXP_MODE                43
+//dwarf
 
+#define MENU_ID_TOP                     44
 
-#define MENU_ID_TOP					44
 /*
 ********************************
     Control Property definitions
@@ -272,32 +274,33 @@ Each menu item in the MOD OS has its own ID, this allows for it to be easily cha
 */
 
 //the HMI is ready to boot
-#define CMD_DUO_BOOT              "boot %i %i %s ..."
+#define CMD_DUO_BOOT                  "boot %i %i %s ..."
 
 //enable footswitch bank navigation [uint8_t]<foot>
 //response: `r 0`
 //HMI action: turns on bank navigation on footswitch <foot>
 //HOST action: -
-#define CMD_DUO_FOOT_NAVIG                "fn %i"
+#define CMD_DUO_FOOT_NAVIG            "fn %i"
 
 //TODO, IS THIS COMMAND STILL USED?!?
 // bank_config <hw_id> <function>
 //response: `r 0`
 //HMI action: turns on bank navigation on footswitch <hw_id> with <function>
 //HOST action: -
-#define CMD_DUO_BANK_CONFIG               "bc %i %i"
+#define CMD_DUO_BANK_CONFIG           "bc %i %i"
 
 // control_next <hw_id>
 //response: `r 0`
 //HMI action: -
 //HOST action: reassigns control <hw_id> with a new actuator
-#define CMD_DUO_CONTROL_NEXT              "n %i"
+#define CMD_DUO_CONTROL_NEXT          "n %i"
 
 // control_index_set <hw_id> <current_index> <total_index>
 //response: `r 0`
 //HMI action: saves and possibly displays the control indexes for control <hw_id>
 //HOST action: -
-#define CMD_DUO_CONTROL_INDEX_SET          "si %i %i %i"
+#define CMD_DUO_CONTROL_INDEX_SET     "si %i %i %i"
+
 /*
 ********************************
     DuoX Specific commands
@@ -305,31 +308,31 @@ Each menu item in the MOD OS has its own ID, this allows for it to be easily cha
 */
 
 //the HMI is ready to boot
-#define CMD_DUOX_BOOT             "boot %i %i %s ..."
+#define CMD_DUOX_BOOT                 "boot %i %i %s ..."
 
 //request the next page <page_to_load>
 //response: `r 0`
 //HMI action: -
 //HOST action: reassigns all controls to the next control page when available
-#define CMD_DUOX_NEXT_PAGE             "lp %i"
+#define CMD_DUOX_NEXT_PAGE            "lp %i"
 
 //save a snapshot <snapshot_id>
 //response: `r 0`
 //HMI action: -
 //HOST action: save all controls as a snapshot with index <snapshot_id> 
-#define CMD_DUOX_SAVE_SNAPSHOT         "ss %i"
+#define CMD_DUOX_SAVE_SNAPSHOT        "ss %i"
 
 //load a snapshot <snapshot_id>
 //response: `r 0`
 //HMI action: -
 //HOST action: set all controls to a snapshot with index <snapshot_id> 
-#define CMD_DUOX_LOAD_SNAPSHOT         "sl %i"
+#define CMD_DUOX_LOAD_SNAPSHOT        "sl %i"
 
 //clear a snapshot <snapshot_id>
 //response: `r 0`
 //HMI action: -
 //HOST action: clear a snapshot with index <snapshot_id> 
-#define CMD_DUOX_CLEAR_SNAPSHOT        "sc"
+#define CMD_DUOX_CLEAR_SNAPSHOT       "sc"
 
 /*
 ********************************
@@ -338,6 +341,12 @@ Each menu item in the MOD OS has its own ID, this allows for it to be easily cha
 */
 
 //TODO AS DEVELOPMENT HAS NOT STARTED
+
+/*
+********************************
+    Command count per device
+********************************
+*/
 
 #define COMMAND_COUNT_DUO   35
 #define COMMAND_COUNT_DUOX  35
