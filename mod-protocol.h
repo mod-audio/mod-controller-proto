@@ -197,78 +197,6 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 
 /*
 ********************************
-    Menu Item ID's
-********************************
-Each menu item in the MOD OS has its own ID, this allows for it to be easily changed and parsed to both sides of the system
-*/
-
-//shared
-#define MENU_ID_SL_IN                   0
-#define MENU_ID_SL_OUT                  1
-#define MENU_ID_TUNER_MUTE              2
-#define MENU_ID_QUICK_BYPASS            3
-#define MENU_ID_PLAY_STATUS             4
-#define MENU_ID_MIDI_CLK_SOURCE         5
-#define MENU_ID_MIDI_CLK_SEND           6
-#define MENU_ID_SNAPSHOT_PRGCHGE        7
-#define MENU_ID_PB_PRGCHNGE             8
-#define MENU_ID_TEMPO                   9
-#define MENU_ID_BEATS_PER_BAR           10
-#define MENU_ID_BYPASS1                 11
-#define MENU_ID_BYPASS2                 12
-#define MENU_ID_BRIGHTNESS              13
-#define MENU_ID_CURRENT_PROFILE         14
-//duo
-#define MENU_ID_FOOTSWITCH_NAV          30
-//duox
-#define MENU_ID_EXP_CV_INPUT            40
-#define MENU_ID_HP_CV_OUTPUT            41
-#define MENU_ID_MASTER_VOL_PORT         42
-#define MENU_ID_EXP_MODE                43
-//dwarf
-
-#define MENU_ID_TOP                     44
-
-/*
-********************************
-    Control Property definitions
-********************************
-*/
-
-//// Banks functions definition
-#define BANK_FUNC_NONE                  0
-#define BANK_FUNC_TRUE_BYPASS           1
-#define BANK_FUNC_PEDALBOARD_NEXT       2
-#define BANK_FUNC_PEDALBOARD_PREV       3
-#define BANK_FUNC_AMOUNT                4
-
-//command bitmask definitions
-//// Control propertires definitions
-#define FLAG_CONTROL_LINEAR             0x000
-#define FLAG_CONTROL_BYPASS             0x001
-#define FLAG_CONTROL_TAP_TEMPO          0x002
-#define FLAG_CONTROL_ENUMERATION        0x004
-#define FLAG_CONTROL_SCALE_POINTS       0x008
-#define FLAG_CONTROL_TRIGGER            0x010
-#define FLAG_CONTROL_TOGGLED            0x020
-#define FLAG_CONTROL_LOGARITHMIC        0x040
-#define FLAG_CONTROL_INTEGER            0x080
-#define FLAG_CONTROL_REVERSE_ENUM       0x100
-#define FLAG_CONTROL_MOMENTARY          0x200
-
-//list pagination bitmasks
-#define FLAG_PAGINATION_PAGE_UP         0x1
-#define FLAG_PAGINATION_WRAP_AROUND     0x2
-#define FLAG_PAGINATION_INITIAL_REQ     0x4
-
-//scalepoints bitmasks
-#define FLAG_SCALEPOINT_PAGINATED       0x1
-#define FLAG_SCALEPOINT_WRAP_AROUND     0x2
-#define FLAG_SCALEPOINT_END_PAGE        0x4
-#define FLAG_SCALEPOINT_ALT_LED_COLOR   0x8
-
-/*
-********************************
     Duo Specific commands
 ********************************
 */
@@ -351,3 +279,79 @@ Each menu item in the MOD OS has its own ID, this allows for it to be easily cha
 #define COMMAND_COUNT_DUO   35
 #define COMMAND_COUNT_DUOX  35
 #define COMMAND_COUNT_DWARF 30
+
+/*
+********************************
+    Banks functions definitions
+********************************
+*/
+
+#define BANK_FUNC_NONE                  0
+#define BANK_FUNC_TRUE_BYPASS           1
+#define BANK_FUNC_PEDALBOARD_NEXT       2
+#define BANK_FUNC_PEDALBOARD_PREV       3
+#define BANK_FUNC_AMOUNT                4
+
+/*
+********************************
+    Flags/bitmasks definitions
+********************************
+*/
+
+//command bitmask definitions
+#define FLAG_CONTROL_LINEAR             0x000
+#define FLAG_CONTROL_BYPASS             0x001
+#define FLAG_CONTROL_TAP_TEMPO          0x002
+#define FLAG_CONTROL_ENUMERATION        0x004
+#define FLAG_CONTROL_SCALE_POINTS       0x008
+#define FLAG_CONTROL_TRIGGER            0x010
+#define FLAG_CONTROL_TOGGLED            0x020
+#define FLAG_CONTROL_LOGARITHMIC        0x040
+#define FLAG_CONTROL_INTEGER            0x080
+#define FLAG_CONTROL_REVERSE_ENUM       0x100
+#define FLAG_CONTROL_MOMENTARY          0x200
+
+//list pagination bitmasks
+#define FLAG_PAGINATION_PAGE_UP         0x1
+#define FLAG_PAGINATION_WRAP_AROUND     0x2
+#define FLAG_PAGINATION_INITIAL_REQ     0x4
+
+//scalepoints bitmasks
+#define FLAG_SCALEPOINT_PAGINATED       0x1
+#define FLAG_SCALEPOINT_WRAP_AROUND     0x2
+#define FLAG_SCALEPOINT_END_PAGE        0x4
+#define FLAG_SCALEPOINT_ALT_LED_COLOR   0x8
+
+/*
+********************************
+    Menu Item ID's
+********************************
+Each menu item in the MOD OS has its own ID, this allows for it to be easily changed and parsed to both sides of the system
+*/
+
+//shared
+#define MENU_ID_SL_IN                   0
+#define MENU_ID_SL_OUT                  1
+#define MENU_ID_TUNER_MUTE              2
+#define MENU_ID_QUICK_BYPASS            3
+#define MENU_ID_PLAY_STATUS             4
+#define MENU_ID_MIDI_CLK_SOURCE         5
+#define MENU_ID_MIDI_CLK_SEND           6
+#define MENU_ID_SNAPSHOT_PRGCHGE        7
+#define MENU_ID_PB_PRGCHNGE             8
+#define MENU_ID_TEMPO                   9
+#define MENU_ID_BEATS_PER_BAR           10
+#define MENU_ID_BYPASS1                 11
+#define MENU_ID_BYPASS2                 12
+#define MENU_ID_BRIGHTNESS              13
+#define MENU_ID_CURRENT_PROFILE         14
+//duo
+#define MENU_ID_FOOTSWITCH_NAV          30
+//duox
+#define MENU_ID_EXP_CV_INPUT            40
+#define MENU_ID_HP_CV_OUTPUT            41
+#define MENU_ID_MASTER_VOL_PORT         42
+#define MENU_ID_EXP_MODE                43
+//dwarf
+
+#define MENU_ID_TOP                     44
