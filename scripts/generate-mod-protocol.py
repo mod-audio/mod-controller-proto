@@ -83,4 +83,4 @@ with open(pythonfile, 'w') as fh:
             fh.write('{}{} = {}\n'.format(key, padding, value))
 
         else:
-            fh.write(line+'\n')
+            fh.write(line.replace('\t','    ')+'\n')
