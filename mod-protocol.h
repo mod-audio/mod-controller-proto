@@ -69,7 +69,7 @@
 
 // control_get <hw_id> 
 //response: `s %i %f`
-//HMI action: returns the assigned control value via control_set
+//HMI action: -
 //HOST action: returns the assigned control value via control_set
 #define CMD_CONTROL_GET               "g %i"
 
@@ -107,7 +107,7 @@
 //response: `r 0`
 //HMI action: -
 //HOST action: loads the requested pedalboard 
-#define CMD_LOAD_PEDALBOARD           "pb %i %s"
+#define CMD_PEDALBOARD_LOAD           "pb %i %s"
 
 // pedalboard_reset
 //response: `r 0`
@@ -141,13 +141,13 @@
 
 // tuner on
 //response: `r 0`
-//HMI action: TODO: turn on the tuner from the system
+//HMI action: -
 //HOST action: turn on the tuner
 #define CMD_TUNER_ON                  "tn"
 
 // tuner off
 //response: `r 0`
-//HMI action: TODO: turn off the tuner from the system
+//HMI action: -
 //HOST action: turn off the tuner
 #define CMD_TUNER_OFF                 "tf"
 
@@ -165,8 +165,8 @@
 
 // reboot in restore mode
 //response: `r 0`
-//HMI action: -
-//HOST action: boot into restore mode
+//HMI action: boot into restore mode
+//HOST action: -
 #define CMD_RESTORE                   "restore"
 
 /*
@@ -187,13 +187,13 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 //response: `r 0`
 //HMI action: -
 //HOST action: loads the selected user profile
-#define CMD_LOAD_PROFILE              "upr %i"
+#define CMD_PROFILE_LOAD              "upr %i"
 
 //store the current profile in mod-ui
 //response: `r 0`
 //HMI action: -
 //HOST action: store the selected user profile with current settings
-#define CMD_STORE_PROFILE             "ups %i"
+#define CMD_PROFILE_STORE             "ups %i"
 
 /*
 ********************************
@@ -206,8 +206,8 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 
 //enable footswitch bank navigation [uint8_t]<foot>
 //response: `r 0`
-//HMI action: turns on bank navigation on footswitch <foot>
-//HOST action: -
+//HMI action: -
+//HOST action: turns on bank navigation on footswitch <foot>
 #define CMD_DUO_FOOT_NAVIG            "fn %i"
 
 //TODO, IS THIS COMMAND STILL USED?!?
@@ -248,19 +248,20 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 //response: `r 0`
 //HMI action: -
 //HOST action: save all controls as a snapshot with index <snapshot_id> 
-#define CMD_DUOX_SAVE_SNAPSHOT        "ss %i"
+#define CMD_DUOX_SNAPSHOT_SAVE        "ss %i"
 
 //load a snapshot <snapshot_id>
 //response: `r 0`
 //HMI action: -
 //HOST action: set all controls to a snapshot with index <snapshot_id> 
-#define CMD_DUOX_LOAD_SNAPSHOT        "sl %i"
+#define CMD_DUOX_SNAPSHOT_LOAD        "sl %i"
 
+// TODO is this really used??
 //clear a snapshot <snapshot_id>
 //response: `r 0`
 //HMI action: -
 //HOST action: clear a snapshot with index <snapshot_id> 
-#define CMD_DUOX_CLEAR_SNAPSHOT       "sc"
+#define CMD_DUOX_SNAPSHOT_CLEAR       "sc"
 
 /*
 ********************************
