@@ -23,12 +23,13 @@ CMD_ARGS = {
         'ps': [],
         'pn': [],
         'pcl': [],
+        'sn': [],
         'ts': [int],
         'tn': [],
         'tf': [],
         'ti': [int],
-        'r': [int,],
         'restore': [],
+        'r': [int,],
         'c': [int,int,],
         'upr': [int],
         'ups': [int],
@@ -70,14 +71,15 @@ CMD_PEDALBOARDS           = 'p'
 CMD_PEDALBOARD_LOAD       = 'pb'
 CMD_PEDALBOARD_RESET      = 'pr'
 CMD_PEDALBOARD_SAVE       = 'ps'
-CMD_PB_NAME_SET           = 'pn'
-CMD_CLEAR_PEDALBOARD      = 'pcl'
+CMD_PEDALBOARD_NAME_SET   = 'pn'
+CMD_PEDALBOARD_CLEAR      = 'pcl'
+CMD_SNAPSHOT_NAME_SET     = 'sn'
 CMD_TUNER                 = 'ts'
 CMD_TUNER_ON              = 'tn'
 CMD_TUNER_OFF             = 'tf'
 CMD_TUNER_INPUT           = 'ti'
-CMD_RESPONSE              = 'r'
 CMD_RESTORE               = 'restore'
+CMD_RESPONSE              = 'r'
 CMD_MENU_ITEM_CHANGE      = 'c'
 CMD_PROFILE_LOAD          = 'upr'
 CMD_PROFILE_STORE         = 'ups'

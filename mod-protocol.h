@@ -283,9 +283,9 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 ********************************
 */
 
-#define COMMAND_COUNT_DUO   35
-#define COMMAND_COUNT_DUOX  35
-#define COMMAND_COUNT_DWARF 30
+#define COMMAND_COUNT_DUO   36
+#define COMMAND_COUNT_DUOX  36
+#define COMMAND_COUNT_DWARF 31
 
 /*
 ********************************
