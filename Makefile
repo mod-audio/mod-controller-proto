@@ -6,7 +6,7 @@
 
 # ---------------------------------------------------------------------------------------------------------------------
 
-all: build python/__init__.py
+all: build mod-protocol.py
 
 build:
 	$(MAKE) build -C tests
@@ -16,7 +16,7 @@ clean:
 
 # ---------------------------------------------------------------------------------------------------------------------
 
-python/__init__.py: mod-protocol.h ./scripts/generate-mod-protocol.py
+mod-protocol.py: mod-protocol.h ./scripts/generate-mod-protocol.py
 	./scripts/generate-mod-protocol.py $(CURDIR)/$< $(CURDIR)/$@
 
 # ---------------------------------------------------------------------------------------------------------------------
