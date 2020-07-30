@@ -125,13 +125,19 @@
 //response: `r 0`
 //HMI action: save and possibly display the new pedalboard name
 //HOST action: -
-#define CMD_PB_NAME_SET               "pn %s ..."
+#define CMD_PEDALBOARD_NAME_SET       "pn %s ..."
 
 //clear both snapshots and controls 
 //response: `r 0`
 //HMI action: clear all pedalboard related items
 //HOST action: -
-#define CMD_CLEAR_PEDALBOARD           "pcl"
+#define CMD_PEDALBOARD_CLEAR          "pcl"
+
+//set the name of the current snapshot
+//response: `r 0`
+//HMI action: save and possibly display the new snapshot name
+//HOST action: -
+#define CMD_SNAPSHOT_NAME_SET         "sn %s ..."
 
 // tuner <frequency> <note> <cents>
 //response: `r 0`
@@ -157,17 +163,17 @@
 //HOST action: changes the tuner input source 
 #define CMD_TUNER_INPUT               "ti %i"
 
-// resp <status> ...
-//response: -
-//HMI action: -
-//HOST action: -
-#define CMD_RESPONSE                  "r %i ..."
-
 // reboot in restore mode
 //response: `r 0`
 //HMI action: boot into restore mode
 //HOST action: -
 #define CMD_RESTORE                   "restore"
+
+// resp <status> ...
+//response: -
+//HMI action: -
+//HOST action: -
+#define CMD_RESPONSE                  "r %i ..."
 
 /*
 ********************************
