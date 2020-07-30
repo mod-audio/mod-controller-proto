@@ -20,9 +20,9 @@ def args_to_type_list(args):
             yield ''
         if arg in ('%d', '%i', '%u', '%x', '%ld', '%li', '%lu', '%lx'):
             yield 'int'
-        if arg == ('%f', '%g'):
+        if arg in ('%f', '%g'):
             yield 'float'
-        if arg == ('%c', '%s'):
+        if arg in ('%c', '%s'):
             yield 'str'
 
 def write_command_key(fh, cmdlist):
