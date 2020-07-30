@@ -11,7 +11,9 @@
 */
 
 // ping
-//response: `pi`
+//response: `r 0`
+//HMI action: nothing, just respond back
+//HOST action: -
 #define CMD_PING                      "pi"
 
 // say <message>
