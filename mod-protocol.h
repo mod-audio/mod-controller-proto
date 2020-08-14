@@ -271,6 +271,12 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 //HOST action: clear a snapshot with index <snapshot_id> 
 #define CMD_DUOX_SNAPSHOT_CLEAR       "sc"
 
+//send an encoder is clicked (used in selftest) <encoder_id>
+//response: -
+//HMI action: -
+//HOST action: -
+#define CMD_DUOX_ENCODER_CLICKED      "enc_clicked %i"
+
 /*
 ********************************
     Dwarf Specific commands
