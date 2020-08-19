@@ -47,6 +47,7 @@ CMD_ARGS = {
         'ss': [int],
         'sl': [int],
         'sc': [],
+        'enc_clicked': [int],
     },
     'DWARF': {
     },
@@ -93,6 +94,7 @@ CMD_DUOX_NEXT_PAGE        = 'lp'
 CMD_DUOX_SNAPSHOT_SAVE    = 'ss'
 CMD_DUOX_SNAPSHOT_LOAD    = 'sl'
 CMD_DUOX_SNAPSHOT_CLEAR   = 'sc'
+CMD_DUOX_ENCODER_CLICKED  = 'enc_clicked'
 
 BANK_FUNC_NONE            = 0
 BANK_FUNC_TRUE_BYPASS     = 1
