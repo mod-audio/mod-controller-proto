@@ -292,7 +292,7 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 */
 
 #define COMMAND_COUNT_DUO   36
-#define COMMAND_COUNT_DUOX  36
+#define COMMAND_COUNT_DUOX  37
 #define COMMAND_COUNT_DWARF 31
 
 /*
@@ -370,3 +370,15 @@ Each menu item in the MOD OS has its own ID, this allows for it to be easily cha
 //dwarf
 
 #define MENU_ID_TOP                     44
+
+/*
+********************************
+    Response error messages
+********************************
+*/
+
+// error messages configuration
+#define RESP_ERR_COMMAND_NOT_FOUND      "not found"
+#define RESP_ERR_MANY_ARGUMENTS         "many arguments"
+#define RESP_ERR_FEW_ARGUMENTS          "few arguments"
+#define RESP_ERR_INVALID_ARGUMENT       "invalid argument"

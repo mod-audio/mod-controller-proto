@@ -120,6 +120,18 @@ for flagtype, flagdata in flags.items():
             error = True
             print("ERROR: flag value {} for {} is not a valid flag (must be a power of 2)".format(flagvalue, flagname))
 
+# test 6: response errors must be unique
+resp_err_strs = []
+
+for resp_err in resp_errs:
+    resp_err_str = resp_err.split(None,1)[1].strip()
+
+    if resp_err_str not in resp_err_strs:
+        resp_err_strs.append(resp_err_str)
+    else:
+        error = True
+        print("ERROR: response error '{}' is duplicated".format(resp_err_str))
+
 # exit now in case of error
 if error:
     sys.exit(2)
@@ -130,10 +142,7 @@ with open(usagefile, 'w') as fh:
     fh.write('#include <stdio.h>\n')
     fh.write('int main()\n{\n')
     fh.write('\tconst char* tmp;\n')
-    for cmd in cmds['ALL']:
-        fh.write('\ttmp = {};\n'.format(cmd.split(None,1)[0]))
-        fh.write('\tputs(tmp);\n');
-    for model in validmodels:
+    for model in validmodels+('ALL',):
         for cmd in cmds[model]:
             fh.write('\ttmp = {};\n'.format(cmd.split(None,1)[0]))
             fh.write('\tputs(tmp);\n');

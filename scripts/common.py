@@ -13,8 +13,8 @@ cmdcount = dict((model,0) for model in validmodels)
 
 bankfuncs = []
 menus = []
-
 flags = {'ALL':[]}
+resp_errs = []
 
 def read_protocol_file(protofile: str):
     with open(protofile, 'r') as fh:
@@ -80,6 +80,9 @@ def read_protocol_file(protofile: str):
                     flags[flagtype] = []
                 flags[flagtype].append(flagdata)
                 flags['ALL'].append((flagtype+'_'+flagdata[0], flagdata[1]))
+
+            elif line.startswith("RESP_ERR_"):
+                resp_errs.append(line)
 
             else:
                 print("ERROR: unhandled define in line", line)
