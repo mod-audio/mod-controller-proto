@@ -84,3 +84,12 @@ with open(pythonfile, 'w') as fh:
 
         else:
             fh.write(line.replace('\t','    ')+'\n')
+    fh.write('def menu_item_id_to_str(idx):\n')
+    fh.write('    if not isinstance(idx, int):\n')
+    fh.write('        raise ValueError\n')
+    for menu in menus:
+        menu_macro, menu_id = menu.split(None,1)
+        fh.write('    elif idx == {}:\n'.format(menu_id))
+        fh.write('        return "{}"\n'.format(menu_macro))
+    fh.write('    else:\n')
+    fh.write('        return "unknown"\n')
