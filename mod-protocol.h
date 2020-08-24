@@ -103,7 +103,7 @@
 //response: `new pedalboard list, with updated items`
 //HMI action: -
 //HOST action: returns a new page of pedalboards 
-#define CMD_PEDALBOARDS               "p %i %i %s"
+#define CMD_PEDALBOARDS               "p %i %i %i"
 
 // pedalboard <bank_id> <pedalboard_uid>
 //response: `r 0`
