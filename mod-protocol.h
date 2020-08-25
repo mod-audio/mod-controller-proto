@@ -271,11 +271,24 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 //HOST action: clear a snapshot with index <snapshot_id> 
 #define CMD_DUOX_SNAPSHOT_CLEAR       "sc"
 
-//send an encoder is clicked (used in selftest) <encoder_id>
+//let the HMI know how many pages there are
+//response: `r 0`
+//HMI action: turn on scrolling through a selection of pages
+//HOST action: -
+//TODO ADAPT THIS COMMAND FOR 6 PAGES
+#define CMD_DUOX_PAGES_AVAILABLE       "pa %i %i %i"
+
+//send if an encoder is clicked (used in selftest) <encoder_id>
 //response: -
 //HMI action: -
 //HOST action: -
 #define CMD_DUOX_ENCODER_CLICKED      "enc_clicked %i"
+
+//send to the HMI to save the current value of a pot as the calibration value (used in selftest) <min/max> <pot_id>
+//response: -
+//HMI action: save current pot value as min/max calibration value
+//HOST action: -
+#define CMD_DUOX_SAVE_POT_CALIBRATION "save_pot_cal %i %i"
 
 /*
 ********************************
