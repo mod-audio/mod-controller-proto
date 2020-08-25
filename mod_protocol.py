@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# pylint: disable=bad-whitespace
+# pylint: disable=too-many-return-statements
 
 CMD_ARGS = {
     'ALL': {
@@ -148,47 +150,46 @@ MENU_ID_TOP              = 44
 def menu_item_id_to_str(idx):
     if not isinstance(idx, int):
         raise ValueError
-    elif idx == 0:
+    if idx == 0:
         return "MENU_ID_SL_IN"
-    elif idx == 1:
+    if idx == 1:
         return "MENU_ID_SL_OUT"
-    elif idx == 2:
+    if idx == 2:
         return "MENU_ID_TUNER_MUTE"
-    elif idx == 3:
+    if idx == 3:
         return "MENU_ID_QUICK_BYPASS"
-    elif idx == 4:
+    if idx == 4:
         return "MENU_ID_PLAY_STATUS"
-    elif idx == 5:
+    if idx == 5:
         return "MENU_ID_MIDI_CLK_SOURCE"
-    elif idx == 6:
+    if idx == 6:
         return "MENU_ID_MIDI_CLK_SEND"
-    elif idx == 7:
+    if idx == 7:
         return "MENU_ID_SNAPSHOT_PRGCHGE"
-    elif idx == 8:
+    if idx == 8:
         return "MENU_ID_PB_PRGCHNGE"
-    elif idx == 9:
+    if idx == 9:
         return "MENU_ID_TEMPO"
-    elif idx == 10:
+    if idx == 10:
         return "MENU_ID_BEATS_PER_BAR"
-    elif idx == 11:
+    if idx == 11:
         return "MENU_ID_BYPASS1"
-    elif idx == 12:
+    if idx == 12:
         return "MENU_ID_BYPASS2"
-    elif idx == 13:
+    if idx == 13:
         return "MENU_ID_BRIGHTNESS"
-    elif idx == 14:
+    if idx == 14:
         return "MENU_ID_CURRENT_PROFILE"
-    elif idx == 30:
+    if idx == 30:
         return "MENU_ID_FOOTSWITCH_NAV"
-    elif idx == 40:
+    if idx == 40:
         return "MENU_ID_EXP_CV_INPUT"
-    elif idx == 41:
+    if idx == 41:
         return "MENU_ID_HP_CV_OUTPUT"
-    elif idx == 42:
+    if idx == 42:
         return "MENU_ID_MASTER_VOL_PORT"
-    elif idx == 43:
+    if idx == 43:
         return "MENU_ID_EXP_MODE"
-    elif idx == 44:
+    if idx == 44:
         return "MENU_ID_TOP"
-    else:
-        return "unknown"
+    return "unknown"

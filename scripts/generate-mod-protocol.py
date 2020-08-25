@@ -43,7 +43,9 @@ def write_command_values(fh, model, cmdlist):
 
 content = ''
 with open(pythonfile, 'w') as fh:
-    content += '#!/usr/bin/env python3\n\n'
+    content += '#!/usr/bin/env python3\n'
+    content += '# pylint: disable=bad-whitespace\n'
+    content += '# pylint: disable=too-many-return-statements\n\n'
     content += 'CMD_ARGS = {\n'
     for model in ('ALL',)+validmodels:
         content += '\t\'{}\': {{\n'.format(model)
@@ -89,7 +91,6 @@ with open(pythonfile, 'w') as fh:
     fh.write('        raise ValueError\n')
     for menu in menus:
         menu_macro, menu_id = menu.split(None,1)
-        fh.write('    elif idx == {}:\n'.format(menu_id))
+        fh.write('    if idx == {}:\n'.format(menu_id))
         fh.write('        return "{}"\n'.format(menu_macro))
-    fh.write('    else:\n')
-    fh.write('        return "unknown"\n')
+    fh.write('    return "unknown"\n')
