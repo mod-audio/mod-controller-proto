@@ -343,6 +343,7 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 #define FLAG_PAGINATION_PAGE_UP         0x1
 #define FLAG_PAGINATION_WRAP_AROUND     0x2
 #define FLAG_PAGINATION_INITIAL_REQ     0x4
+#define FLAG_PAGINATION_ALT_LED_COLOR   0x8
 
 //scalepoints bitmasks
 #define FLAG_SCALEPOINT_PAGINATED       0x1
