@@ -49,7 +49,7 @@ CMD_ARGS = {
         'ss': [int],
         'sl': [int],
         'sc': [],
-        'pa': [int,int,int],
+        'pa': [int,int,int,int,int,int],
         'enc_clicked': [int],
         'save_pot_cal': [int,int],
     },

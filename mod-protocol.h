@@ -276,7 +276,7 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 //HMI action: turn on scrolling through a selection of pages
 //HOST action: -
 //TODO ADAPT THIS COMMAND FOR 6 PAGES
-#define CMD_DUOX_PAGES_AVAILABLE       "pa %i %i %i"
+#define CMD_DUOX_PAGES_AVAILABLE       "pa %i %i %i %i %i %i"
 
 //send if an encoder is clicked (used in selftest) <encoder_id>
 //response: -
