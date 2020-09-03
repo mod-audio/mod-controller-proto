@@ -327,7 +327,6 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 */
 
 //command bitmask definitions
-#define FLAG_CONTROL_LINEAR             0x000
 #define FLAG_CONTROL_BYPASS             0x001
 #define FLAG_CONTROL_TAP_TEMPO          0x002
 #define FLAG_CONTROL_ENUMERATION        0x004
