@@ -335,7 +335,7 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 #define FLAG_CONTROL_TOGGLED            0x020
 #define FLAG_CONTROL_LOGARITHMIC        0x040
 #define FLAG_CONTROL_INTEGER            0x080
-#define FLAG_CONTROL_REVERSE_ENUM       0x100
+#define FLAG_CONTROL_REVERSE            0x100
 #define FLAG_CONTROL_MOMENTARY          0x200
 
 //list pagination bitmasks
