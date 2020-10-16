@@ -278,18 +278,6 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 //TODO ADAPT THIS COMMAND FOR 6 PAGES
 #define CMD_DUOX_PAGES_AVAILABLE       "pa %i %i %i %i %i %i"
 
-//send if an encoder is clicked (used in selftest) <encoder_id>
-//response: -
-//HMI action: -
-//HOST action: -
-#define CMD_DUOX_ENCODER_CLICKED      "enc_clicked %i"
-
-//send to the HMI to save the current value of a pot as the calibration value (used in selftest) <min/max> <pot_id>
-//response: -
-//HMI action: save current pot value as min/max calibration value
-//HOST action: -
-#define CMD_DUOX_SAVE_POT_CALIBRATION "save_pot_cal %i %i"
-
 /*
 ********************************
     Dwarf Specific commands
@@ -300,13 +288,73 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 
 /*
 ********************************
+    Selftest Specific commands
+********************************
+*/
+
+//send if an encoder is clicked (used in selftest) <encoder_id>
+//response: -
+//HMI action: -
+//HOST action: -
+#define CMD_SELFTEST_ENCODER_CLICKED      "enc_clicked %i"
+
+//send if an encoder is turned left (used in selftest) <encoder_id>
+//response: -
+//HMI action: -
+//HOST action: -
+#define CMD_SELFTEST_ENCODER_LEFT         "enc_left %i"
+
+//send if an encoder is turned right (used in selftest) <encoder_id>
+//response: -
+//HMI action: -
+//HOST action: -
+#define CMD_SELFTEST_ENCODER_RIGHT      "enc_right %i"
+
+//send if an button is clicked (used in selftest) <button_id>
+//response: -
+//HMI action: -
+//HOST action: -
+#define CMD_SELFTEST_BUTTON_CLICKED      "button_clicked %i"
+
+//send so HMI can check calibration (used in selftest) <pot_id>
+//response: -
+//HMI action: check call and return id when ok
+//HOST action: -
+#define CMD_SELFTEST_CHECK_CALIBRATION   "pot_call_check %i"
+
+//send if an button is clicked (used in selftest) <pot_id>
+//response: -
+//HMI action: -
+//HOST action: -
+#define CMD_SELFTEST_CALLIBRATION_OK   "pot_call_ok %i"
+
+//send if the selftest hangs on a control to continue
+//response: -
+//HMI action: -
+//HOST action: -
+#define CMD_SELFTEST_ENABLE_SKIP   "control_skip_enable"
+
+//send if the selftest hangs on a control to continue
+//response: -
+//HMI action: -
+//HOST action: -
+#define CMD_SELFTEST_SKIP_CONTROL   "control_bad_skip"
+
+//send to the HMI to save the current value of a pot as the calibration value (used in selftest) <min/max> <pot_id>
+//response: -
+//HMI action: save current pot value as min/max calibration value
+//HOST action: -
+#define CMD_SELFTEST_SAVE_POT_CALIBRATION "save_pot_cal %i %i"
+
+/*
+********************************
     Command count per device
 ********************************
 */
 
-#define COMMAND_COUNT_DUO   36
-#define COMMAND_COUNT_DUOX  39
-#define COMMAND_COUNT_DWARF 31
+#define COMMAND_COUNT_DUO   45
+#define COMMAND_COUNT_DUOX  46
+#define COMMAND_COUNT_DWARF 40
 
 /*
 ********************************
