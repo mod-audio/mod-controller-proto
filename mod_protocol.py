@@ -59,6 +59,7 @@ CMD_ARGS = {
         'sl': [int],
         'sc': [],
         'pa': [int,int,int,int,int,int],
+        'reset_eeprom': [],
     },
     'DWARF': {
     },
@@ -115,6 +116,7 @@ CMD_DUOX_SNAPSHOT_SAVE            = 'ss'
 CMD_DUOX_SNAPSHOT_LOAD            = 'sl'
 CMD_DUOX_SNAPSHOT_CLEAR           = 'sc'
 CMD_DUOX_PAGES_AVAILABLE          = 'pa'
+CMD_DUOX_RESET_EEPROM             = 'reset_eeprom'
 
 BANK_FUNC_NONE            = 0
 BANK_FUNC_TRUE_BYPASS     = 1

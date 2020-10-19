@@ -278,6 +278,13 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 //TODO ADAPT THIS COMMAND FOR 6 PAGES
 #define CMD_DUOX_PAGES_AVAILABLE       "pa %i %i %i %i %i %i"
 
+//clear all HMI EEPROM settings
+//response: `r 0`
+//HMI action: clear internal EEPROM settings and reset default value's
+//HOST action: -
+//TODO ADAPT THIS COMMAND FOR 6 PAGES
+#define CMD_DUOX_RESET_EEPROM      "reset_eeprom"
+
 /*
 ********************************
     Dwarf Specific commands
@@ -353,7 +360,7 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 */
 
 #define COMMAND_COUNT_DUO   45
-#define COMMAND_COUNT_DUOX  46
+#define COMMAND_COUNT_DUOX  47
 #define COMMAND_COUNT_DWARF 40
 
 /*
