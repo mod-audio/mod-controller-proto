@@ -339,7 +339,7 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 //response: -
 //HMI action: -
 //HOST action: -
-#define CMD_SELFTEST_ENABLE_SKIP   "control_skip_enable"
+#define CMD_SELFTEST_SKIP_CONTROL_ENABLE   "control_skip_enable"
 
 //send if the selftest hangs on a control to continue
 //response: -
