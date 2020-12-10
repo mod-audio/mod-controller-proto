@@ -56,7 +56,7 @@
 //HOST action: -
 #define CMD_GUI_DISCONNECTED          "ud"
 
-// control_add <hw_id> <label> <control_prop> <unit> <value> <max> <min> <steps> 
+// control_add <hw_id> <label> <control_prop> <unit> <value> <max> <min> <steps>
 //             [scale_point_count] [scale_point_flag] [scale_point_index] {[scale_point1_label] [scale_point1_value]}...
 //response: `r 0`
 //HMI action: assign a new hw control
@@ -69,7 +69,7 @@
 //HOST action: -
 #define CMD_CONTROL_REMOVE            "d %i ..."
 
-// control_get <hw_id> 
+// control_get <hw_id>
 //response: `s %i %f`
 //HMI action: -
 //HOST action: returns the assigned control value via control_set
@@ -96,19 +96,19 @@
 // banks <direction> <current banks hover id>
 //response: `new banks list, with updated items`
 //HMI action: -
-//HOST action: returns a new page of banks 
+//HOST action: returns a new page of banks
 #define CMD_BANKS                     "b %i %i"
 
 // pedalboards <up/down page> <current page index> <bank_uid>
 //response: `new pedalboard list, with updated items`
 //HMI action: -
-//HOST action: returns a new page of pedalboards 
+//HOST action: returns a new page of pedalboards
 #define CMD_PEDALBOARDS               "p %i %i %i"
 
 // pedalboard <bank_id> <pedalboard_uid>
 //response: `r 0`
 //HMI action: -
-//HOST action: loads the requested pedalboard 
+//HOST action: loads the requested pedalboard
 #define CMD_PEDALBOARD_LOAD           "pb %i %s"
 
 // pedalboard_reset
@@ -129,7 +129,7 @@
 //HOST action: -
 #define CMD_PEDALBOARD_NAME_SET       "pn %s ..."
 
-//clear both snapshots and controls 
+//clear both snapshots and controls
 //response: `r 0`
 //HMI action: clear all pedalboard related items
 //HOST action: -
@@ -162,7 +162,7 @@
 // tuner_input <input>
 //response: `r 0`
 //HMI action: -
-//HOST action: changes the tuner input source 
+//HOST action: changes the tuner input source
 #define CMD_TUNER_INPUT               "ti %i"
 
 // reboot in restore mode
@@ -202,6 +202,18 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 //HMI action: -
 //HOST action: store the selected user profile with current settings
 #define CMD_PROFILE_STORE             "ups %i"
+
+//request the next page <page_to_load>
+//response: `r 0`
+//HMI action: -
+//HOST action: reassigns all controls to the next control page when available
+#define CMD_NEXT_PAGE                 "lp %i"
+
+//clear all HMI EEPROM settings
+//response: `r 0`
+//HMI action: clear internal EEPROM settings and reset default value's
+//HOST action: -
+#define CMD_RESET_EEPROM              "reset_eeprom"
 
 /*
 ********************************
@@ -246,44 +258,30 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 //the HMI is ready to boot
 #define CMD_DUOX_BOOT                 "boot %i %i %s ..."
 
-//request the next page <page_to_load>
-//response: `r 0`
-//HMI action: -
-//HOST action: reassigns all controls to the next control page when available
-#define CMD_DUOX_NEXT_PAGE            "lp %i"
-
 //save a snapshot <snapshot_id>
 //response: `r 0`
 //HMI action: -
-//HOST action: save all controls as a snapshot with index <snapshot_id> 
+//HOST action: save all controls as a snapshot with index <snapshot_id>
 #define CMD_DUOX_SNAPSHOT_SAVE        "ss %i"
 
 //load a snapshot <snapshot_id>
 //response: `r 0`
 //HMI action: -
-//HOST action: set all controls to a snapshot with index <snapshot_id> 
+//HOST action: set all controls to a snapshot with index <snapshot_id>
 #define CMD_DUOX_SNAPSHOT_LOAD        "sl %i"
 
 // TODO is this really used??
 //clear a snapshot <snapshot_id>
 //response: `r 0`
 //HMI action: -
-//HOST action: clear a snapshot with index <snapshot_id> 
+//HOST action: clear a snapshot with index <snapshot_id>
 #define CMD_DUOX_SNAPSHOT_CLEAR       "sc"
 
 //let the HMI know how many pages there are
 //response: `r 0`
 //HMI action: turn on scrolling through a selection of pages
 //HOST action: -
-//TODO ADAPT THIS COMMAND FOR 6 PAGES
-#define CMD_DUOX_PAGES_AVAILABLE       "pa %i %i %i %i %i %i"
-
-//clear all HMI EEPROM settings
-//response: `r 0`
-//HMI action: clear internal EEPROM settings and reset default value's
-//HOST action: -
-//TODO ADAPT THIS COMMAND FOR 6 PAGES
-#define CMD_DUOX_RESET_EEPROM      "reset_eeprom"
+#define CMD_DUOX_PAGES_AVAILABLE      "pa %i %i %i %i %i %i"
 
 /*
 ********************************
@@ -291,7 +289,11 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 ********************************
 */
 
-//TODO AS DEVELOPMENT HAS NOT STARTED
+//report to UI that a subpage changed for control <hw_id> <subpage>
+//response: `r 0`
+//HMI action: -
+//HOST action: reassigns control <hw_id> with the actuator from the requested page
+#define CMD_DWARF_CONTROL_SUBPAGE      "cs %i %i"
 
 /*
 ********************************
@@ -315,37 +317,37 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 //response: -
 //HMI action: -
 //HOST action: -
-#define CMD_SELFTEST_ENCODER_RIGHT      "enc_right %i"
+#define CMD_SELFTEST_ENCODER_RIGHT        "enc_right %i"
 
 //send if an button is clicked (used in selftest) <button_id>
 //response: -
 //HMI action: -
 //HOST action: -
-#define CMD_SELFTEST_BUTTON_CLICKED      "button_clicked %i"
+#define CMD_SELFTEST_BUTTON_CLICKED       "button_clicked %i"
 
 //send so HMI can check calibration (used in selftest) <pot_id>
 //response: -
 //HMI action: check call and return id when ok
 //HOST action: -
-#define CMD_SELFTEST_CHECK_CALIBRATION   "pot_call_check %i"
+#define CMD_SELFTEST_CHECK_CALIBRATION    "pot_call_check %i"
 
 //send if an button is clicked (used in selftest) <pot_id>
 //response: -
 //HMI action: -
 //HOST action: -
-#define CMD_SELFTEST_CALLIBRATION_OK   "pot_call_ok %i"
+#define CMD_SELFTEST_CALLIBRATION_OK      "pot_call_ok %i"
 
 //send if the selftest hangs on a control to continue
 //response: -
 //HMI action: -
 //HOST action: -
-#define CMD_SELFTEST_SKIP_CONTROL_ENABLE   "control_skip_enable"
+#define CMD_SELFTEST_SKIP_CONTROL_ENABLE  "control_skip_enable"
 
 //send if the selftest hangs on a control to continue
 //response: -
 //HMI action: -
 //HOST action: -
-#define CMD_SELFTEST_SKIP_CONTROL   "control_bad_skip"
+#define CMD_SELFTEST_SKIP_CONTROL         "control_bad_skip"
 
 //send to the HMI to save the current value of a pot as the calibration value (used in selftest) <min/max> <pot_id>
 //response: -
@@ -359,9 +361,9 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 ********************************
 */
 
-#define COMMAND_COUNT_DUO   45
+#define COMMAND_COUNT_DUO   47
 #define COMMAND_COUNT_DUOX  47
-#define COMMAND_COUNT_DWARF 40
+#define COMMAND_COUNT_DWARF 43
 
 /*
 ********************************
