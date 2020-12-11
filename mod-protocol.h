@@ -111,6 +111,18 @@
 //HOST action: loads the requested pedalboard
 #define CMD_PEDALBOARD_LOAD           "pb %i %s"
 
+// snapshots <up/down page> <current page index>
+//response: `new snapshot list, with updated items`
+//HMI action: -
+//HOST action: returns a new page of pedalboards
+#define CMD_SNAPSHOTS                 "ssg %i %i"
+
+// pedalboard <pedalboard_uid>
+//response: `r 0`
+//HMI action: -
+//HOST action: loads the requested snapshot
+#define CMD_SNAPSHOTS_LOAD            "ssl %i %s"
+
 // pedalboard_reset
 //response: `r 0`
 //HMI action: -
@@ -361,9 +373,9 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 ********************************
 */
 
-#define COMMAND_COUNT_DUO   47
-#define COMMAND_COUNT_DUOX  47
-#define COMMAND_COUNT_DWARF 43
+#define COMMAND_COUNT_DUO   49
+#define COMMAND_COUNT_DUOX  49
+#define COMMAND_COUNT_DWARF 45
 
 /*
 ********************************
