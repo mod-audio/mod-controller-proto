@@ -305,7 +305,13 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 //response: `r 0`
 //HMI action: -
 //HOST action: reassigns control <hw_id> with the actuator from the requested page
-#define CMD_DWARF_CONTROL_SUBPAGE      "cs %i %i"
+#define CMD_DWARF_CONTROL_SUBPAGE     "cs %i %i"
+
+//let the HMI know how many pages there are
+//response: `r 0`
+//HMI action: turn on scrolling through a selection of pages
+//HOST action: -
+#define CMD_DWARF_PAGES_AVAILABLE     "pa %i %i %i %i %i %i %i %i"
 
 /*
 ********************************
@@ -375,7 +381,7 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 
 #define COMMAND_COUNT_DUO   49
 #define COMMAND_COUNT_DUOX  49
-#define COMMAND_COUNT_DWARF 45
+#define COMMAND_COUNT_DWARF 46
 
 /*
 ********************************
