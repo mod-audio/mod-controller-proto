@@ -121,7 +121,7 @@
 //response: `r 0`
 //HMI action: -
 //HOST action: loads the requested snapshot
-#define CMD_SNAPSHOTS_LOAD            "ssl %s"
+#define CMD_SNAPSHOTS_LOAD            "ssl %i"
 
 // pedalboard_reset
 //response: `r 0`
