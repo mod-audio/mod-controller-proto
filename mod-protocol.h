@@ -379,47 +379,47 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 ********************************
 */
 
-//send I/O gain values to change <0 = in, 1 = out> <channel 1 or 2> <value>
+//send I/O gain values to change <size arguments> <0 = in, 1 = out> <channel 1, 2 or 0 for both> <value>
 //response: -
 //HMI action: -
 //HOST action: changes the gain in alsamixer
-#define CMD_SYS_GAIN                    "g_io %i %i %f"
+#define CMD_SYS_GAIN                    "sys_gio %i %i %i %f"
 
 //send HP gain value
 //response: -
 //HMI action: -
-//HOST action: changes the gain in alsamixer
-#define CMD_SYS_HP_GAIN                 "g_hp %f"
+//HOST action: changes the gain in alsamixer <size arguments> <value>
+#define CMD_SYS_HP_GAIN                 "sys_ghp %i %f"
 
 //request bluetooth status parameters from host
 //response: bluetooth status parameters
 //HMI action: -
 //HOST action: replies with bluetooth status parameters
-#define CMD_SYS_BT_STATUS                "bt_s"
+#define CMD_SYS_BT_STATUS                "sys_bts"
 
 //enable bluetooth discovery
 //response: -
 //HMI action: -
 //HOST action: enables bluetooth discovery
-#define CMD_SYS_BT_DISCOVERY             "bt_d"
+#define CMD_SYS_BT_DISCOVERY             "sys_btd"
 
-//check status of systemctl services <name of service>
+//check status of systemctl services <size arguments> <name of service>
 //response: status of service
 //HMI action: -
 //HOST action: reply status of service
-#define CMD_SYS_SYSTEMCTL               "sctl %s"
+#define CMD_SYS_SYSTEMCTL               "sys_ctl %i %s"
 
-//check current versions of sys components <name of component>
+//check current versions of sys components <size arguments> <name of component>
 //response: version of component
 //HMI action: -
 //HOST action: reply version of component
-#define CMD_SYS_VERSION                 "ver %s"
+#define CMD_SYS_VERSION                 "sys_ver %i %s"
 
 //check the device serial number
 //response: serial number of device
 //HMI action: -
 //HOST action: serial number of device
-#define CMD_SYS_SERIAL                   "ser"
+#define CMD_SYS_SERIAL                   "sys_ser"
 
 /*
 ********************************
