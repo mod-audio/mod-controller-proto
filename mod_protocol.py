@@ -48,6 +48,13 @@ CMD_ARGS = {
         'control_skip_enable': [],
         'control_bad_skip': [],
         'save_pot_cal': [int,int],
+        'g_io': [int,int,float],
+        'g_hp': [float],
+        'bt_s': [],
+        'bt_d': [],
+        'sctl': [str],
+        'ver': [str],
+        'ser': [],
     },
     'DUO': {
         'boot': [int,int,str,],
@@ -113,6 +120,13 @@ CMD_SELFTEST_CALLIBRATION_OK      = 'pot_call_ok'
 CMD_SELFTEST_SKIP_CONTROL_ENABLE  = 'control_skip_enable'
 CMD_SELFTEST_SKIP_CONTROL         = 'control_bad_skip'
 CMD_SELFTEST_SAVE_POT_CALIBRATION = 'save_pot_cal'
+CMD_SYS_GAIN                      = 'g_io'
+CMD_SYS_HP_GAIN                   = 'g_hp'
+CMD_SYS_BT_STATUS                 = 'bt_s'
+CMD_SYS_BT_DISCOVERY              = 'bt_d'
+CMD_SYS_SYSTEMCTL                 = 'sctl'
+CMD_SYS_VERSION                   = 'ver'
+CMD_SYS_SERIAL                    = 'ser'
 CMD_DUO_BOOT                      = 'boot'
 CMD_DUO_FOOT_NAVIG                = 'fn'
 CMD_DUO_BANK_CONFIG               = 'bc'

@@ -375,13 +375,61 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 
 /*
 ********************************
+    System commands (used on another serial bus)
+********************************
+*/
+
+//send I/O gain values to change <0 = in, 1 = out> <channel 1 or 2> <value>
+//response: -
+//HMI action: -
+//HOST action: changes the gain in alsamixer
+#define CMD_SYS_GAIN                    "g_io %i %i %f"
+
+//send HP gain value
+//response: -
+//HMI action: -
+//HOST action: changes the gain in alsamixer
+#define CMD_SYS_HP_GAIN                 "g_hp %f"
+
+//request bluetooth status parameters from host
+//response: bluetooth status parameters
+//HMI action: -
+//HOST action: replies with bluetooth status parameters
+#define CMD_SYS_BT_STATUS                "bt_s"
+
+//enable bluetooth discovery
+//response: -
+//HMI action: -
+//HOST action: enables bluetooth discovery
+#define CMD_SYS_BT_DISCOVERY             "bt_d"
+
+//check status of systemctl services <name of service>
+//response: status of service
+//HMI action: -
+//HOST action: reply status of service
+#define CMD_SYS_SYSTEMCTL               "sctl %s"
+
+//check current versions of sys components <name of component>
+//response: version of component
+//HMI action: -
+//HOST action: reply version of component
+#define CMD_SYS_VERSION                 "ver %s"
+
+//check the device serial number
+//response: serial number of device
+//HMI action: -
+//HOST action: serial number of device
+#define CMD_SYS_SERIAL                   "ser"
+
+/*
+********************************
     Command count per device
 ********************************
 */
 
-#define COMMAND_COUNT_DUO   49
-#define COMMAND_COUNT_DUOX  49
-#define COMMAND_COUNT_DWARF 46
+#define COMMAND_COUNT_DUO   56
+#define COMMAND_COUNT_DUOX  56
+#define COMMAND_COUNT_DWARF 53
 
 /*
 ********************************
