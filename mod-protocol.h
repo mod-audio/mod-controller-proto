@@ -382,7 +382,7 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 // All system commands must have "sys_" prefix
 #define _CMD_SYS_PREFIX "sys_"
 
-// All system commands must have length 7 (e,g. "cmd_xyz")
+// All system commands must have length 7 (e,g. "sys_ver")
 #define _CMD_SYS_LENGTH 7
 
 // If system command has data, we specify how big it is in 2 digits in hexadecimal notation (e.g. "0c")
