@@ -405,6 +405,12 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 //HOST action: changes the gain in alsamixer <size arguments> <value>
 #define CMD_SYS_HP_GAIN                 "sys_ghp %02x %f"
 
+//save mixer values
+//response: -
+//HMI action: -
+//HOST action: saves the current alsamixer values to disk
+#define CMD_SYS_AMIXER_SAVE              "sys_ams"
+
 //request bluetooth status parameters from host
 //response: bluetooth status parameters
 //HMI action: -
@@ -441,9 +447,9 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 ********************************
 */
 
-#define COMMAND_COUNT_DUO   56
-#define COMMAND_COUNT_DUOX  56
-#define COMMAND_COUNT_DWARF 53
+#define COMMAND_COUNT_DUO   57
+#define COMMAND_COUNT_DUOX  57
+#define COMMAND_COUNT_DWARF 54
 
 /*
 ********************************

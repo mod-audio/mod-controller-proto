@@ -50,6 +50,7 @@ CMD_ARGS = {
         'save_pot_cal': [int,int],
         'sys_gio': [int,int,float],
         'sys_ghp': [float],
+        'sys_ams': [],
         'sys_bts': [],
         'sys_btd': [],
         'sys_ctl': [str],
@@ -122,6 +123,7 @@ CMD_SELFTEST_SKIP_CONTROL         = 'control_bad_skip'
 CMD_SELFTEST_SAVE_POT_CALIBRATION = 'save_pot_cal'
 CMD_SYS_GAIN                      = 'sys_gio'
 CMD_SYS_HP_GAIN                   = 'sys_ghp'
+CMD_SYS_AMIXER_SAVE               = 'sys_ams'
 CMD_SYS_BT_STATUS                 = 'sys_bts'
 CMD_SYS_BT_DISCOVERY              = 'sys_btd'
 CMD_SYS_SYSTEMCTL                 = 'sys_ctl'
