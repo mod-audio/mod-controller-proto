@@ -379,6 +379,15 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 ********************************
 */
 
+// All system commands must have "sys_" prefix
+#define _CMD_SYS_PREFIX "sys_"
+
+// All system commands must have length 7 (e,g. "cmd_xyz")
+#define _CMD_SYS_LENGTH 7
+
+// If system command has data, we specify how big it is in 2 digits in hexadecimal notation (e.g. "0c")
+#define _CMD_SYS_DATA_LENGTH 2
+
 //send I/O gain values to change <size arguments> <0 = in, 1 = out> <channel 1, 2 or 0 for both> <value>
 //response: -
 //HMI action: -

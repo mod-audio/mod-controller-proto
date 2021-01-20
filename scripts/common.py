@@ -16,6 +16,10 @@ menus = []
 flags = {'ALL':[]}
 resp_errs = []
 
+_CMD_SYS_PREFIX = None
+_CMD_SYS_LENGTH = None
+_CMD_SYS_DATA_LENGTH = None
+
 def read_protocol_file(protofile: str):
     with open(protofile, 'r') as fh:
         stopcounter = 0
@@ -37,6 +41,10 @@ def read_protocol_file(protofile: str):
 
             line = line.replace('#define','',1).strip()
 
+            if not line:
+                print("ERROR: empty define in line", line)
+                return False
+
             if line.startswith("CMD_"):
                 for model in validmodels:
                     if line.startswith("CMD_{}_".format(model)):
@@ -44,6 +52,35 @@ def read_protocol_file(protofile: str):
                         break
                 else:
                     cmds['ALL'].append(line)
+
+                # extra checks for system commands
+                if line.startswith("CMD_SYS_"):
+                    if _CMD_SYS_PREFIX is None:
+                        print("ERROR: _CMD_SYS_PREFIX is not defined")
+                        return False
+                    if _CMD_SYS_LENGTH is None:
+                        print("ERROR: _CMD_SYS_PREFIX is not defined")
+                        return False
+                    macro, string = line.replace("CMD_SYS_","",1).split(None,1)
+                    if " " in string:
+                        syscmd,sysargs = string[1:-1].split(None,1)
+                    else:
+                        syscmd = string[1:-1]
+                        sysargs = ""
+                    if len(syscmd) != _CMD_SYS_LENGTH:
+                        print("ERROR: system command has invalid length:", syscmd)
+                        return False
+                    if not syscmd.startswith(_CMD_SYS_PREFIX):
+                        print("ERROR: system command has invalid prefix:", syscmd, "vs", _CMD_SYS_PREFIX)
+                        return False
+                    if sysargs:
+                        sysargs = sysargs.split(" ")
+                        if len(sysargs) == 1:
+                            print("ERROR: system command has single argument:", syscmd, "(should be size + real args)")
+                            return False
+                        if sysargs[0] not in ("%d", "%i"):
+                            print("ERROR: first argument of system command must be integer:", syscmd)
+                            return False
 
             elif line.startswith("COMMAND_COUNT_"):
                 model, value = line.replace("COMMAND_COUNT_","",1).split()
@@ -83,6 +120,15 @@ def read_protocol_file(protofile: str):
 
             elif line.startswith("RESP_ERR_"):
                 resp_errs.append(line)
+
+            elif line.startswith("_CMD_SYS_PREFIX"):
+                _CMD_SYS_PREFIX = line.split()[1][1:-1]
+
+            elif line.startswith("_CMD_SYS_LENGTH"):
+                _CMD_SYS_LENGTH = int(line.split()[1])
+
+            elif line.startswith("_CMD_SYS_DATA_LENGTH"):
+                _CMD_SYS_DATA_LENGTH = int(line.split()[1])
 
             else:
                 print("ERROR: unhandled define in line", line)
