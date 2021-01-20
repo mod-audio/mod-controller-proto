@@ -189,6 +189,11 @@
 //HOST action: -
 #define CMD_RESPONSE                  "r %i ..."
 
+// convenience macros
+#define CMD_RESPONSE_NONE             "r %i"
+#define CMD_RESPONSE_INT              "r %i %i"
+#define CMD_RESPONSE_STR              "r %i %s"
+
 /*
 ********************************
     SHARED MENU COMMANDS
@@ -392,13 +397,13 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 //response: -
 //HMI action: -
 //HOST action: changes the gain in alsamixer
-#define CMD_SYS_GAIN                    "sys_gio %i %i %i %f"
+#define CMD_SYS_GAIN                    "sys_gio %02x %i %i %f"
 
 //send HP gain value
 //response: -
 //HMI action: -
 //HOST action: changes the gain in alsamixer <size arguments> <value>
-#define CMD_SYS_HP_GAIN                 "sys_ghp %i %f"
+#define CMD_SYS_HP_GAIN                 "sys_ghp %02x %f"
 
 //request bluetooth status parameters from host
 //response: bluetooth status parameters
@@ -416,13 +421,13 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 //response: status of service
 //HMI action: -
 //HOST action: reply status of service
-#define CMD_SYS_SYSTEMCTL               "sys_ctl %i %s"
+#define CMD_SYS_SYSTEMCTL               "sys_ctl %02x %s"
 
 //check current versions of sys components <size arguments> <name of component>
 //response: version of component
 //HMI action: -
 //HOST action: reply version of component
-#define CMD_SYS_VERSION                 "sys_ver %i %s"
+#define CMD_SYS_VERSION                 "sys_ver %02x %s"
 
 //check the device serial number
 //response: serial number of device

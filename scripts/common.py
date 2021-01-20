@@ -46,6 +46,9 @@ def read_protocol_file(protofile: str):
                 return False
 
             if line.startswith("CMD_"):
+                if line.startswith("CMD_RESPONSE_"):
+                    continue
+
                 for model in validmodels:
                     if line.startswith("CMD_{}_".format(model)):
                         cmds[model].append(line)
@@ -78,8 +81,8 @@ def read_protocol_file(protofile: str):
                         if len(sysargs) == 1:
                             print("ERROR: system command has single argument:", syscmd, "(should be size + real args)")
                             return False
-                        if sysargs[0] not in ("%d", "%i"):
-                            print("ERROR: first argument of system command must be integer:", syscmd)
+                        if sysargs[0] != "%02x":
+                            print("ERROR: first argument of system command must be %02x:", syscmd)
                             return False
 
             elif line.startswith("COMMAND_COUNT_"):
