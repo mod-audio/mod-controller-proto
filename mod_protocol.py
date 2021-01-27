@@ -56,6 +56,8 @@ CMD_ARGS = {
         'sys_ctl': [str],
         'sys_ver': [str],
         'sys_ser': [],
+        'sys_usb': [int],
+        'sys_rbt': [],
     },
     'DUO': {
         'boot': [int,int,str,],
@@ -129,6 +131,8 @@ CMD_SYS_BT_DISCOVERY              = 'sys_btd'
 CMD_SYS_SYSTEMCTL                 = 'sys_ctl'
 CMD_SYS_VERSION                   = 'sys_ver'
 CMD_SYS_SERIAL                    = 'sys_ser'
+CMD_SYS_USB_MODE                  = 'sys_usb'
+CMD_SYS_REBOOT                    = 'sys_rbt'
 CMD_DUO_BOOT                      = 'boot'
 CMD_DUO_FOOT_NAVIG                = 'fn'
 CMD_DUO_BANK_CONFIG               = 'bc'

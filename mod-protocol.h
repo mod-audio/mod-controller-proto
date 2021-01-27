@@ -441,15 +441,26 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 //HOST action: serial number of device
 #define CMD_SYS_SERIAL                   "sys_ser"
 
+//change usb mode for next (re)boot
+//response: -
+//HMI action: -
+//HOST action: current usb mode
+#define CMD_SYS_USB_MODE                 "sys_usb %02x %i"
+
+//reboot the system
+//HMI action: -
+//HOST action: calls "hmi-reset" and then "reboot"
+#define CMD_SYS_REBOOT                   "sys_rbt"
+
 /*
 ********************************
     Command count per device
 ********************************
 */
 
-#define COMMAND_COUNT_DUO   57
-#define COMMAND_COUNT_DUOX  57
-#define COMMAND_COUNT_DWARF 54
+#define COMMAND_COUNT_DUO   59
+#define COMMAND_COUNT_DUOX  59
+#define COMMAND_COUNT_DWARF 56
 
 /*
 ********************************
