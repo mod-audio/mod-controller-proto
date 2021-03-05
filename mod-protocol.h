@@ -300,6 +300,13 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 //HOST action: -
 #define CMD_DUOX_PAGES_AVAILABLE      "pa %i %i %i %i %i %i"
 
+//sets the display contrast on the HMI <display_id> <contrast value between 0 and 100>
+//response: `r 0`
+//HMI action: changes display contrast
+//HOST action: -
+#define CMD_DUOX_SET_CONTRAST      "s_contrast %i %i"
+
+
 /*
 ********************************
     Dwarf Specific commands
@@ -459,7 +466,7 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 */
 
 #define COMMAND_COUNT_DUO   59
-#define COMMAND_COUNT_DUOX  59
+#define COMMAND_COUNT_DUOX  60
 #define COMMAND_COUNT_DWARF 56
 
 /*
