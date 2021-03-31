@@ -459,15 +459,33 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 //HOST action: calls "hmi-reset" and then "reboot"
 #define CMD_SYS_REBOOT                   "sys_rbt"
 
+// led set <assignment_id> <red> <green> <blue>
+//response: `r 0`
+//HMI action: change assigned led color (-1 for a reset)
+//HOST action: -
+#define CMD_SYS_CHANGE_LED               "ls %02x %i %i ..."
+
+// name set <assignment_id> <new txt string>
+//response: `r 0`
+//HMI action: change assigned name txt
+//HOST action: -
+#define CMD_SYS_CHANGE_NAME              "ns %02x %i %s ..."
+
+// unit set <assignment_id> <new txt string>
+//response: `r 0`
+//HMI action: change assigned unit txt
+//HOST action: -
+#define CMD_SYS_CHANGE_UNIT              "us %02x %i %s ..."
+
 /*
 ********************************
     Command count per device
 ********************************
 */
 
-#define COMMAND_COUNT_DUO   59
-#define COMMAND_COUNT_DUOX  60
-#define COMMAND_COUNT_DWARF 56
+#define COMMAND_COUNT_DUO   62
+#define COMMAND_COUNT_DUOX  63
+#define COMMAND_COUNT_DWARF 59
 
 /*
 ********************************
