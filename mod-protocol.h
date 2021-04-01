@@ -183,6 +183,11 @@
 //HOST action: -
 #define CMD_RESTORE                   "restore"
 
+// TESTING plugin stuff experimental, to be moved into sys stuff later
+#define CMD_SYSPLUG_COMPR_DISABLE     "syscompr_off"
+#define CMD_SYSPLUG_COMPR_SETUP       "syscompr %f %f %f %f %f %f"
+#define CMD_SYSPLUG_VOLUME            "sysvol %f"
+
 // resp <status> ...
 //response: -
 //HMI action: -
@@ -463,19 +468,19 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 //response: `r 0`
 //HMI action: change assigned led color (-1 for a reset)
 //HOST action: -
-#define CMD_SYS_CHANGE_LED               "ls %02x %i %i ..."
+#define CMD_SYS_CHANGE_LED               "sys_led %02x %i %i %i %i"
 
 // name set <assignment_id> <new txt string>
 //response: `r 0`
 //HMI action: change assigned name txt
 //HOST action: -
-#define CMD_SYS_CHANGE_NAME              "ns %02x %i %s ..."
+#define CMD_SYS_CHANGE_NAME              "sys_nam %02x %i %s"
 
 // unit set <assignment_id> <new txt string>
 //response: `r 0`
 //HMI action: change assigned unit txt
 //HOST action: -
-#define CMD_SYS_CHANGE_UNIT              "us %02x %i %s ..."
+#define CMD_SYS_CHANGE_UNIT              "sys_uni %02x %i %s"
 
 /*
 ********************************
@@ -483,9 +488,9 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 ********************************
 */
 
-#define COMMAND_COUNT_DUO   62
-#define COMMAND_COUNT_DUOX  63
-#define COMMAND_COUNT_DWARF 59
+#define COMMAND_COUNT_DUO   65
+#define COMMAND_COUNT_DUOX  66
+#define COMMAND_COUNT_DWARF 62
 
 /*
 ********************************
