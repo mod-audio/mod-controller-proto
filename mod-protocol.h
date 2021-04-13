@@ -464,11 +464,11 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 //HOST action: calls "hmi-reset" and then "reboot"
 #define CMD_SYS_REBOOT                   "sys_rbt"
 
-// led set <assignment_id> <red> <green> <blue>
+// led set <assignment_id> <red> <green> <blue> <on_time_ms> <off_time_ms>
 //response: `r 0`
 //HMI action: change assigned led color (-1 for a reset)
 //HOST action: -
-#define CMD_SYS_CHANGE_LED               "sys_led %02x %i %i %i %i"
+#define CMD_SYS_CHANGE_LED               "sys_led %02x %i %i ..."
 
 // name set <assignment_id> <new txt string>
 //response: `r 0`
