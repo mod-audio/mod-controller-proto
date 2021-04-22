@@ -464,7 +464,7 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 //HOST action: calls "hmi-reset" and then "reboot"
 #define CMD_SYS_REBOOT                   "sys_rbt"
 
-// led set <assignment_id> <red> <green> <blue> <on_time_ms> <off_time_ms>
+// led set <assignment_id> <color_id> <on_time_ms> <off_time_ms>
 //response: `r 0`
 //HMI action: change assigned led color (-1 for a reset)
 //HOST action: -
@@ -533,6 +533,21 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 #define FLAG_SCALEPOINT_WRAP_AROUND     0x2
 #define FLAG_SCALEPOINT_END_PAGE        0x4
 #define FLAG_SCALEPOINT_ALT_LED_COLOR   0x8
+
+/*
+********************************
+ Widget LED colours definitions
+********************************
+*/
+
+#define WIDGET_LED0_COLOR               {0,   0,     0}
+#define WIDGET_LED1_COLOR               {100, 0,     0}
+#define WIDGET_LED2_COLOR               {0,   100,   0}
+#define WIDGET_LED3_COLOR               {0,   0,   100}
+#define WIDGET_LED4_COLOR               {100, 0,   100}
+#define WIDGET_LED5_COLOR               {0,   100, 100}
+#define WIDGET_LED6_COLOR               {100, 100,   0}
+#define WIDGET_LED7_COLOR               {100, 100, 100}
 
 /*
 ********************************
