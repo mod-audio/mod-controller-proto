@@ -26,6 +26,12 @@
 //HOST action: TODO, TURN ON PEAKMETER LEDS (if ever needed)
 #define CMD_LED                       "l %i %i %i %i ..."
 
+// brightness <o to 4>
+//response: `r 0`
+//HMI action: change display brightness
+//HOST action: -
+#define CMD_DISP_BRIGHTNESS           "displ_bright %i"
+
 // glcd_text <glcd_id> <x_pos> <y_pos> <text>
 //response: `r 0`
 //HMI action: display the line text <text> at x y
@@ -488,9 +494,9 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 ********************************
 */
 
-#define COMMAND_COUNT_DUO   65
-#define COMMAND_COUNT_DUOX  66
-#define COMMAND_COUNT_DWARF 62
+#define COMMAND_COUNT_DUO   66
+#define COMMAND_COUNT_DUOX  67
+#define COMMAND_COUNT_DWARF 63
 
 /*
 ********************************
