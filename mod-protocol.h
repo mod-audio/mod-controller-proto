@@ -542,21 +542,6 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 
 /*
 ********************************
- Widget LED colours definitions
-********************************
-*/
-
-#define WIDGET_LED0_COLOR               {0,   0,     0}
-#define WIDGET_LED1_COLOR               {100, 0,     0}
-#define WIDGET_LED2_COLOR               {0,   100,   0}
-#define WIDGET_LED3_COLOR               {0,   0,   100}
-#define WIDGET_LED4_COLOR               {100, 0,   100}
-#define WIDGET_LED5_COLOR               {0,   100, 100}
-#define WIDGET_LED6_COLOR               {100, 100,   0}
-#define WIDGET_LED7_COLOR               {100, 100, 100}
-
-/*
-********************************
     Menu Item ID's
 ********************************
 Each menu item in the MOD OS has its own ID, this allows for it to be easily changed and parsed to both sides of the system

@@ -7,6 +7,7 @@ CMD_ARGS = {
         'pi': [],
         'say': [str,],
         'l': [int,int,int,int,],
+        'displ_bright': [int],
         'glcd_text': [int,int,int,str],
         'glcd_dialog': [str],
         'glcd_draw': [int,int,int,str],
@@ -61,7 +62,7 @@ CMD_ARGS = {
         'sys_ser': [],
         'sys_usb': [int],
         'sys_rbt': [],
-        'sys_led': [int,int,int,int],
+        'sys_led': [int,int,],
         'sys_nam': [int,str],
         'sys_uni': [int,str],
     },
@@ -89,6 +90,7 @@ CMD_ARGS = {
 CMD_PING                          = 'pi'
 CMD_SAY                           = 'say'
 CMD_LED                           = 'l'
+CMD_DISP_BRIGHTNESS               = 'displ_bright'
 CMD_GLCD_TEXT                     = 'glcd_text'
 CMD_GLCD_DIALOG                   = 'glcd_dialog'
 CMD_GLCD_DRAW                     = 'glcd_draw'
