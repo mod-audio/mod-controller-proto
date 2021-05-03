@@ -317,6 +317,11 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 //HOST action: -
 #define CMD_DUOX_SET_CONTRAST      "s_contrast %i %i"
 
+//notify the HMI of the EXP mode change
+//response: `r 0`
+//HMI action: gives user popup regarding the I/O chagne
+//HOST action: -
+#define CMD_DUOX_EXP_OVERCURRENT      "exp_overcurrent"
 
 /*
 ********************************
@@ -495,7 +500,7 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 */
 
 #define COMMAND_COUNT_DUO   66
-#define COMMAND_COUNT_DUOX  67
+#define COMMAND_COUNT_DUOX  68
 #define COMMAND_COUNT_DWARF 63
 
 /*

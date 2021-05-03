@@ -80,6 +80,7 @@ CMD_ARGS = {
         'sc': [],
         'pa': [int,int,int,int,int,int],
         's_contrast': [int,int],
+        'exp_overcurrent': [],
     },
     'DWARF': {
         'cs': [int,int],
@@ -159,6 +160,7 @@ CMD_DUOX_SNAPSHOT_LOAD            = 'sl'
 CMD_DUOX_SNAPSHOT_CLEAR           = 'sc'
 CMD_DUOX_PAGES_AVAILABLE          = 'pa'
 CMD_DUOX_SET_CONTRAST             = 's_contrast'
+CMD_DUOX_EXP_OVERCURRENT          = 'exp_overcurrent'
 CMD_DWARF_CONTROL_SUBPAGE         = 'cs'
 CMD_DWARF_PAGES_AVAILABLE         = 'pa'
 
