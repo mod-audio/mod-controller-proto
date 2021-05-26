@@ -493,15 +493,27 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 //HOST action: -
 #define CMD_SYS_CHANGE_UNIT              "sys_uni %02x %i %s"
 
+// name set <assignment_id> <new txt string>
+//response: `r 0`
+//HMI action: change assigned name txt
+//HOST action: -
+#define CMD_SYS_CHANGE_VALUE              "sys_val %02x %i %s"
+
+// unit set <assignment_id> <indicator val 0.0 to 1.0>
+//response: `r 0`
+//HMI action: change assigned unit txt
+//HOST action: -
+#define CMD_SYS_CHANGE_WIDGET_INDICATOR   "sys_ind %02x %i %f"
+
 /*
 ********************************
     Command count per device
 ********************************
 */
 
-#define COMMAND_COUNT_DUO   66
-#define COMMAND_COUNT_DUOX  68
-#define COMMAND_COUNT_DWARF 63
+#define COMMAND_COUNT_DUO   68
+#define COMMAND_COUNT_DUOX  70
+#define COMMAND_COUNT_DWARF 65
 
 /*
 ********************************
