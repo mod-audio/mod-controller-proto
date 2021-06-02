@@ -50,6 +50,7 @@ CMD_ARGS = {
         'control_bad_skip': [],
         'save_pot_cal': [int,int],
         'sys_gio': [int,int,float],
+        'sys_ghp': [float],
         'sys_ngc': [int],
         'sys_ngt': [float],
         'sys_ngd': [float],
@@ -138,6 +139,7 @@ CMD_SELFTEST_SKIP_CONTROL_ENABLE  = 'control_skip_enable'
 CMD_SELFTEST_SKIP_CONTROL         = 'control_bad_skip'
 CMD_SELFTEST_SAVE_POT_CALIBRATION = 'save_pot_cal'
 CMD_SYS_GAIN                      = 'sys_gio'
+CMD_SYS_HP_GAIN                   = 'sys_ghp'
 CMD_SYS_NG_CHANNEL                = 'sys_ngc'
 CMD_SYS_NG_THRESHOLD              = 'sys_ngt'
 CMD_SYS_NG_DECAY                  = 'sys_ngd'

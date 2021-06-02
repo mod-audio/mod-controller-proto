@@ -417,6 +417,12 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 //HOST action: changes the gain in alsamixer
 #define CMD_SYS_GAIN                    "sys_gio %02x %i %i %f"
 
+//send HP gain value
+//response: -
+//HMI action: -
+//HOST action: changes the gain in alsamixer <size arguments> <value>
+#define CMD_SYS_HP_GAIN                 "sys_ghp %02x %f"
+
 //send noisegate channel value
 //response: if no argument for channel is givin, the current channel is returned
 //HMI action: -
@@ -536,9 +542,9 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 ********************************
 */
 
-#define COMMAND_COUNT_DUO   70
-#define COMMAND_COUNT_DUOX  72
-#define COMMAND_COUNT_DWARF 67
+#define COMMAND_COUNT_DUO   71
+#define COMMAND_COUNT_DUOX  73
+#define COMMAND_COUNT_DWARF 68
 
 /*
 ********************************
