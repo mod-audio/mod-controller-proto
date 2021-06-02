@@ -34,9 +34,6 @@ CMD_ARGS = {
         'tf': [],
         'ti': [int],
         'restore': [],
-        'syscompr_off': [],
-        'syscompr': [float,float,float,float,float,float],
-        'sysvol': [float],
         'r': [int,],
         'c': [int,int,],
         'upr': [int],
@@ -53,7 +50,12 @@ CMD_ARGS = {
         'control_bad_skip': [],
         'save_pot_cal': [int,int],
         'sys_gio': [int,int,float],
-        'sys_ghp': [float],
+        'sys_ngc': [int],
+        'sys_ngt': [float],
+        'sys_ngd': [float],
+        'sys_cmm': [int],
+        'sys_cmr': [float],
+        'sys_pbg': [float],
         'sys_ams': [],
         'sys_bts': [],
         'sys_btd': [],
@@ -120,9 +122,6 @@ CMD_TUNER_ON                      = 'tn'
 CMD_TUNER_OFF                     = 'tf'
 CMD_TUNER_INPUT                   = 'ti'
 CMD_RESTORE                       = 'restore'
-CMD_SYSPLUG_COMPR_DISABLE         = 'syscompr_off'
-CMD_SYSPLUG_COMPR_SETUP           = 'syscompr'
-CMD_SYSPLUG_VOLUME                = 'sysvol'
 CMD_RESPONSE                      = 'r'
 CMD_MENU_ITEM_CHANGE              = 'c'
 CMD_PROFILE_LOAD                  = 'upr'
@@ -139,7 +138,12 @@ CMD_SELFTEST_SKIP_CONTROL_ENABLE  = 'control_skip_enable'
 CMD_SELFTEST_SKIP_CONTROL         = 'control_bad_skip'
 CMD_SELFTEST_SAVE_POT_CALIBRATION = 'save_pot_cal'
 CMD_SYS_GAIN                      = 'sys_gio'
-CMD_SYS_HP_GAIN                   = 'sys_ghp'
+CMD_SYS_NG_CHANNEL                = 'sys_ngc'
+CMD_SYS_NG_THRESHOLD              = 'sys_ngt'
+CMD_SYS_NG_DECAY                  = 'sys_ngd'
+CMD_SYS_COMP_MODE                 = 'sys_cmm'
+CMD_SYS_COMP_RELEASE              = 'sys_cmr'
+CMD_SYS_COMP_PEDALBOARD_GAIN      = 'sys_pbg'
 CMD_SYS_AMIXER_SAVE               = 'sys_ams'
 CMD_SYS_BT_STATUS                 = 'sys_bts'
 CMD_SYS_BT_DISCOVERY              = 'sys_btd'

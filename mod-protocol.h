@@ -189,11 +189,6 @@
 //HOST action: -
 #define CMD_RESTORE                   "restore"
 
-// TESTING plugin stuff experimental, to be moved into sys stuff later
-#define CMD_SYSPLUG_COMPR_DISABLE     "syscompr_off"
-#define CMD_SYSPLUG_COMPR_SETUP       "syscompr %f %f %f %f %f %f"
-#define CMD_SYSPLUG_VOLUME            "sysvol %f"
-
 // resp <status> ...
 //response: -
 //HMI action: -
@@ -422,11 +417,41 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 //HOST action: changes the gain in alsamixer
 #define CMD_SYS_GAIN                    "sys_gio %02x %i %i %f"
 
-//send HP gain value
-//response: -
+//send noisegate channel value
+//response: if no argument for channel is givin, the current channel is returned
 //HMI action: -
-//HOST action: changes the gain in alsamixer <size arguments> <value>
-#define CMD_SYS_HP_GAIN                 "sys_ghp %02x %f"
+//HOST action: changes the noisegate channel <size arguments> <value>
+#define CMD_SYS_NG_CHANNEL              "sys_ngc %02x %i"
+
+//send noisegate threshold value
+//response: if no argument for channel is givin, the current threshold is returned
+//HMI action: -
+//HOST action: changes the noisegate threshold <size arguments> <value>
+#define CMD_SYS_NG_THRESHOLD            "sys_ngt %02x %f"
+
+//send noisegate decay value
+//response: if no argument for channel is givin, the current decay is returned
+//HMI action: -
+//HOST action: changes the noisegate decay <size arguments> <value>
+#define CMD_SYS_NG_DECAY                "sys_ngd %02x %f"
+
+//send compressor mode value
+//response: if no argument for channel is givin, the current mode is returned
+//HMI action: -
+//HOST action: changes the compressor mode <size arguments> <value>
+#define CMD_SYS_COMP_MODE                "sys_cmm %02x %i"
+
+//send compressor release value
+//response: if no argument for channel is givin, the current release is returned
+//HMI action: -
+//HOST action: changes the compressor release <size arguments> <value>
+#define CMD_SYS_COMP_RELEASE             "sys_cmr %02x %f"
+
+//send compressor pedalboard gain value
+//response: if no argument for channel is givin, the current gain is returned
+//HMI action: -
+//HOST action: changes the pedalboard gain in the compressor <size arguments> <value>
+#define CMD_SYS_COMP_PEDALBOARD_GAIN      "sys_pbg %02x %f"
 
 //save mixer values
 //response: -
@@ -511,9 +536,9 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 ********************************
 */
 
-#define COMMAND_COUNT_DUO   68
-#define COMMAND_COUNT_DUOX  70
-#define COMMAND_COUNT_DWARF 65
+#define COMMAND_COUNT_DUO   70
+#define COMMAND_COUNT_DUOX  72
+#define COMMAND_COUNT_DWARF 67
 
 /*
 ********************************
