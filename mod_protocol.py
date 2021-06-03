@@ -70,6 +70,8 @@ CMD_ARGS = {
         'sys_uni': [int,str],
         'sys_val': [int,str],
         'sys_ind': [int,float],
+        'sys_pch': [int],
+        'sys_spc': [int],
     },
     'DUO': {
         'boot': [int,int,str,],
@@ -159,6 +161,8 @@ CMD_SYS_CHANGE_NAME               = 'sys_nam'
 CMD_SYS_CHANGE_UNIT               = 'sys_uni'
 CMD_SYS_CHANGE_VALUE              = 'sys_val'
 CMD_SYS_CHANGE_WIDGET_INDICATOR   = 'sys_ind'
+CMD_SYS_PAGE_CHANGE               = 'sys_pch'
+CMD_SYS_SUBPAGE_CHANGE            = 'sys_spc'
 CMD_DUO_BOOT                      = 'boot'
 CMD_DUO_FOOT_NAVIG                = 'fn'
 CMD_DUO_BANK_CONFIG               = 'bc'

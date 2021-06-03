@@ -536,15 +536,27 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 //HOST action: -
 #define CMD_SYS_CHANGE_WIDGET_INDICATOR   "sys_ind %02x %i %f"
 
+// notifies the system the user changed a page <new_page_id>
+//response: `r 0`
+//HMI action: -
+//HOST action: -
+#define CMD_SYS_PAGE_CHANGE              "sys_pch %02x %i"
+
+// notifies the system the user changed a subpage <new_subpage_id>
+//response: `r 0`
+//HMI action: -
+//HOST action: -
+#define CMD_SYS_SUBPAGE_CHANGE          "sys_spc %02x %i"
+
 /*
 ********************************
     Command count per device
 ********************************
 */
 
-#define COMMAND_COUNT_DUO   71
-#define COMMAND_COUNT_DUOX  73
-#define COMMAND_COUNT_DWARF 68
+#define COMMAND_COUNT_DUO   73
+#define COMMAND_COUNT_DUOX  75
+#define COMMAND_COUNT_DWARF 70
 
 /*
 ********************************
