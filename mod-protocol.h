@@ -433,13 +433,13 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 //response: if no argument for channel is givin, the current threshold is returned
 //HMI action: -
 //HOST action: changes the noisegate threshold <size arguments> <value>
-#define CMD_SYS_NG_THRESHOLD            "sys_ngt %02x %f"
+#define CMD_SYS_NG_THRESHOLD            "sys_ngt %02x %i"
 
 //send noisegate decay value
 //response: if no argument for channel is givin, the current decay is returned
 //HMI action: -
 //HOST action: changes the noisegate decay <size arguments> <value>
-#define CMD_SYS_NG_DECAY                "sys_ngd %02x %f"
+#define CMD_SYS_NG_DECAY                "sys_ngd %02x %i"
 
 //send compressor mode value
 //response: if no argument for channel is givin, the current mode is returned
@@ -451,13 +451,13 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 //response: if no argument for channel is givin, the current release is returned
 //HMI action: -
 //HOST action: changes the compressor release <size arguments> <value>
-#define CMD_SYS_COMP_RELEASE             "sys_cmr %02x %f"
+#define CMD_SYS_COMP_RELEASE             "sys_cmr %02x %i"
 
 //send compressor pedalboard gain value
 //response: if no argument for channel is givin, the current gain is returned
 //HMI action: -
 //HOST action: changes the pedalboard gain in the compressor <size arguments> <value>
-#define CMD_SYS_COMP_PEDALBOARD_GAIN      "sys_pbg %02x %f"
+#define CMD_SYS_COMP_PEDALBOARD_GAIN      "sys_pbg %02x %i"
 
 //save mixer values
 //response: -
