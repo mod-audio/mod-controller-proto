@@ -105,29 +105,49 @@
 //HOST action: returns a new page of banks
 #define CMD_BANKS                     "b %i %i"
 
+// bank new <bank_name>
+//response: -
+//HMI action: -
+//HOST action: creates a new bank
+#define CMD_BANK_NEW                  "bn %s ..."
+
+// bank delete <bank_id>
+//response: -
+//HMI action: -
+//HOST action: deletes indicated bank
+#define CMD_BANK_DELETE               "bd %i"
+
+// add pedalboards to bank <bank_id_to_add_to> <bank_id_pbs_originate_from> <pb uids>
+//response: -
+//HMI action: -
+//HOST action: add the pb uids to the bank
+//             add all the pbs from a bank if bank_id_pbs_originate_from == -1, in that case
+//             bank uids are passed
+#define CMD_ADD_PBS_TO_BANK           "ba %i %i %i ..."
+
+// reorder the pb within a bank  <bank_uid> <pb_to_move_uid> <index_to_move_to>
+//response: -
+//HMI action: -
+//HOST action: reorder the pb in a bank
+#define CMD_REORDER_PBS_IN_BANK       "br %i %i %i"
+
 // pedalboards <up/down page> <current page index> <bank_uid>
 //response: `new pedalboard list, with updated items`
 //HMI action: -
 //HOST action: returns a new page of pedalboards
 #define CMD_PEDALBOARDS               "p %i %i %i"
 
+//set the name of the current pedalboard on the device display
+//response: `r 0`
+//HMI action: save and possibly display the new pedalboard name
+//HOST action: -
+#define CMD_PEDALBOARD_NAME_SET       "pn %s ..."
+
 // pedalboard <bank_id> <pedalboard_uid>
 //response: `r 0`
 //HMI action: -
 //HOST action: loads the requested pedalboard
 #define CMD_PEDALBOARD_LOAD           "pb %i %s"
-
-// snapshots <up/down page> <current page index>
-//response: `new snapshot list, with updated items`
-//HMI action: -
-//HOST action: returns a new page of pedalboards
-#define CMD_SNAPSHOTS                 "ssg %i %i"
-
-// pedalboard <pedalboard_uid>
-//response: `r 0`
-//HMI action: -
-//HOST action: loads the requested snapshot
-#define CMD_SNAPSHOTS_LOAD            "ssl %i"
 
 // pedalboard_reset
 //response: `r 0`
@@ -141,23 +161,65 @@
 //HOST action: saves the pedalboard in the current state
 #define CMD_PEDALBOARD_SAVE           "ps"
 
-//set the name of the current pedalboard
+//save current setup as new pedalboard
 //response: `r 0`
-//HMI action: save and possibly display the new pedalboard name
-//HOST action: -
-#define CMD_PEDALBOARD_NAME_SET       "pn %s ..."
+//HMI action:
+//HOST action: saves the pb, if the name already excists, return -1
+#define CMD_PEDALBOARD_SAVE_AS        "psa %s ..."
 
-//clear both snapshots and controls
+//clear both snapshots and control changes
 //response: `r 0`
 //HMI action: clear all pedalboard related items
 //HOST action: -
 #define CMD_PEDALBOARD_CLEAR          "pcl"
 
-//set the name of the current snapshot
+// pedalboard delete <pb_id>
+//response: -
+//HMI action: -
+//HOST action: deletes indicated pedalboard
+#define CMD_PEDALBOARD_DELETE         "pbd %i"
+
+// reorder the snapshot within a pedalboard <pb uid> <snapshot_to_move_uid> <index_to_move_to>
+//response: -
+//HMI action: -
+//HOST action: reorder the pb in a bank
+#define CMD_REORDER_SSS_IN_PB         "sr %i %i"
+
+// snapshots <up/down page> <current page index>
+//response: `new snapshot list, with updated items`
+//HMI action: -
+//HOST action: returns a new page of pedalboards
+#define CMD_SNAPSHOTS                 "ssg %i %i"
+
+//set the name of the current snapshot on the device display
 //response: `r 0`
 //HMI action: save and possibly display the new snapshot name
 //HOST action: -
 #define CMD_SNAPSHOT_NAME_SET         "sn %s ..."
+
+// snapshot <snapshot_uid>
+//response: `r 0`
+//HMI action: -
+//HOST action: loads the requested snapshot
+#define CMD_SNAPSHOTS_LOAD            "ssl %i"
+
+// snapshot save <snapshot_uid>
+//response: `r 0`
+//HMI action: -
+//HOST action: saves the indicated snapshot
+#define CMD_SNAPSHOTS_SAVE            "sss %i"
+
+//save the current control config as a snapshot
+//response: `r 0`
+//HMI action:
+//HOST action: saves the snapshot, if the name already excists, return -1
+#define CMD_SNAPSHOT_SAVE_AS          "ssa %s ..."
+
+// bank snapshot <snapshot_id>
+//response: -
+//HMI action: -
+//HOST action: deletes indicated snapshot
+#define CMD_SNAPSHOT_DELETE           "ssd %i"
 
 // tuner <frequency> <note> <cents>
 //response: `r 0`
@@ -554,9 +616,9 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 ********************************
 */
 
-#define COMMAND_COUNT_DUO   73
-#define COMMAND_COUNT_DUOX  75
-#define COMMAND_COUNT_DWARF 70
+#define COMMAND_COUNT_DUO   83
+#define COMMAND_COUNT_DUOX  85
+#define COMMAND_COUNT_DWARF 80
 
 /*
 ********************************

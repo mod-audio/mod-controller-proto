@@ -20,15 +20,25 @@ CMD_ARGS = {
         'ncp': [int,int],
         'is': [int,int,int,int,int,str,str,],
         'b': [int,int],
+        'bn': [str,],
+        'bd': [int],
+        'ba': [int,int,int,],
+        'br': [int,int,int],
         'p': [int,int,int],
+        'pn': [str,],
         'pb': [int,str],
-        'ssg': [int,int],
-        'ssl': [int],
         'pr': [],
         'ps': [],
-        'pn': [str,],
+        'psa': [str,],
         'pcl': [],
+        'pbd': [int],
+        'sr': [int,int],
+        'ssg': [int,int],
         'sn': [str,],
+        'ssl': [int],
+        'sss': [int],
+        'ssa': [str,],
+        'ssd': [int],
         'ts': [float,str,int],
         'tn': [],
         'tf': [],
@@ -111,15 +121,25 @@ CMD_CONTROL_SET                   = 's'
 CMD_CONTROL_PAGE                  = 'ncp'
 CMD_INITIAL_STATE                 = 'is'
 CMD_BANKS                         = 'b'
+CMD_BANK_NEW                      = 'bn'
+CMD_BANK_DELETE                   = 'bd'
+CMD_ADD_PBS_TO_BANK               = 'ba'
+CMD_REORDER_PBS_IN_BANK           = 'br'
 CMD_PEDALBOARDS                   = 'p'
+CMD_PEDALBOARD_NAME_SET           = 'pn'
 CMD_PEDALBOARD_LOAD               = 'pb'
-CMD_SNAPSHOTS                     = 'ssg'
-CMD_SNAPSHOTS_LOAD                = 'ssl'
 CMD_PEDALBOARD_RESET              = 'pr'
 CMD_PEDALBOARD_SAVE               = 'ps'
-CMD_PEDALBOARD_NAME_SET           = 'pn'
+CMD_PEDALBOARD_SAVE_AS            = 'psa'
 CMD_PEDALBOARD_CLEAR              = 'pcl'
+CMD_PEDALBOARD_DELETE             = 'pbd'
+CMD_REORDER_SSS_IN_PB             = 'sr'
+CMD_SNAPSHOTS                     = 'ssg'
 CMD_SNAPSHOT_NAME_SET             = 'sn'
+CMD_SNAPSHOTS_LOAD                = 'ssl'
+CMD_SNAPSHOTS_SAVE                = 'sss'
+CMD_SNAPSHOT_SAVE_AS              = 'ssa'
+CMD_SNAPSHOT_DELETE               = 'ssd'
 CMD_TUNER                         = 'ts'
 CMD_TUNER_ON                      = 'tn'
 CMD_TUNER_OFF                     = 'tf'
