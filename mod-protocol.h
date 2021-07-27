@@ -87,7 +87,7 @@
 //HOST action: sends assigned control data
 #define CMD_CONTROL_SET               "s %i %f"
 
-// control_set <hw_id><value>
+// next control page <hw_id> <prop bitmask> <page index id>
 //response: `a %i %s %i %s %f %f %f %i %i ...`
 //HMI action: -
 //HOST action: sends back a control_add command with new control page data
@@ -563,6 +563,12 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 //HOST action: current usb mode
 #define CMD_SYS_USB_MODE                 "sys_usb %02x %i"
 
+//toggle mod noise removal
+//response: -
+//HMI action: -
+//HOST action: current noise removal mode
+#define CMD_SYS_NOISE_REMOVAL            "sys_mnr %02x %i"
+
 //reboot the system
 //HMI action: -
 //HOST action: calls "hmi-reset" and then "reboot"
@@ -616,9 +622,9 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 ********************************
 */
 
-#define COMMAND_COUNT_DUO   83
-#define COMMAND_COUNT_DUOX  85
-#define COMMAND_COUNT_DWARF 80
+#define COMMAND_COUNT_DUO   84
+#define COMMAND_COUNT_DUOX  86
+#define COMMAND_COUNT_DWARF 81
 
 /*
 ********************************
