@@ -179,7 +179,7 @@
 //HOST action: deletes indicated pedalboard
 #define CMD_PEDALBOARD_DELETE         "pbd %i %i"
 
-// reorder the snapshot within a pedalboard <pb uid> <snapshot_to_move_uid> <index_to_move_to>
+// reorder the snapshot within a pedalboard <snapshot_to_move_uid> <index_to_move_to>
 //response: -
 //HMI action: -
 //HOST action: reorder the pb in a bank
