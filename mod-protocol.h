@@ -123,7 +123,7 @@
 //HOST action: add the pb uids to the bank
 //             add all the pbs from a bank if bank_id_pbs_originate_from == -1, in that case
 //             bank uids are passed
-#define CMD_ADD_PBS_TO_BANK           "ba %i %i %i ..."
+#define CMD_ADD_PBS_TO_BANK           "ba %i %i %s ..."
 
 // reorder the pb within a bank  <bank_uid> <pb_to_move_uid> <index_to_move_to>
 //response: -

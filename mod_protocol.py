@@ -22,7 +22,7 @@ CMD_ARGS = {
         'b': [int,int],
         'bn': [str,],
         'bd': [int],
-        'ba': [int,int,int,],
+        'ba': [int,int,str,],
         'br': [int,int,int],
         'p': [int,int,int],
         'pn': [str,],
