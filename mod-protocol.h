@@ -203,11 +203,11 @@
 //HOST action: loads the requested snapshot
 #define CMD_SNAPSHOTS_LOAD            "ssl %i"
 
-// snapshot save <snapshot_uid>
+// snapshot save
 //response: `r 0`
 //HMI action: -
-//HOST action: saves the indicated snapshot
-#define CMD_SNAPSHOTS_SAVE            "sss %i"
+//HOST action: saves the currently active snapshot
+#define CMD_SNAPSHOTS_SAVE            "sss"
 
 //save the current control config as a snapshot
 //response: `r 0`
