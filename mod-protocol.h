@@ -191,11 +191,11 @@
 //HOST action: returns a new page of pedalboards
 #define CMD_SNAPSHOTS                 "ssg %i %i"
 
-//set the name of the current snapshot on the device display
+//set the name of the current snapshot on the device display <snapshot_id> <snapshot_name>
 //response: `r 0`
 //HMI action: save and possibly display the new snapshot name
 //HOST action: -
-#define CMD_SNAPSHOT_NAME_SET         "sn %s ..."
+#define CMD_SNAPSHOT_NAME_SET         "sn %i %s ..."
 
 // snapshot <snapshot_uid>
 //response: `r 0`
