@@ -91,7 +91,7 @@
 //response: `a %i %s %i %s %f %f %f %i %i ...`
 //HMI action: -
 //HOST action: sends back a control_add command with new control page data
-#define CMD_CONTROL_PAGE              "ncp %i %i"
+#define CMD_CONTROL_PAGE              "ncp %i %i %i"
 
 // initial_state <amount of pb's> <page_min> <page_max> <bank_id> <pb_id> [current_pedalboards_list]
 //response: `r 0`

@@ -17,7 +17,7 @@ CMD_ARGS = {
         'd': [int,],
         'g': [int],
         's': [int,float],
-        'ncp': [int,int],
+        'ncp': [int,int,int],
         'is': [int,int,int,int,int,str,str,],
         'b': [int,int],
         'bn': [str,],
