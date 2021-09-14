@@ -86,6 +86,20 @@ with open(pythonfile, 'w') as fh:
 
         else:
             fh.write(line.replace('\t','    ')+'\n')
+
+    fh.write('def cmd_to_str(cmd):\n')
+    fh.write('    if not isinstance(cmd, str):\n')
+    fh.write('        raise ValueError\n')
+    for model in ('ALL',)+validmodels:
+        write_command_key(fh, cmds[model])
+        for cmd in cmds[model]:
+            macro, key = cmd.split(None,1)
+            macro = macro.strip()
+            key = key.split(None,1)[0].replace('"','')
+            fh.write('    if cmd == "{}":\n'.format(key))
+            fh.write('        return "{}"\n'.format(macro))
+    fh.write('    return "unknown"\n\n')
+
     fh.write('def menu_item_id_to_str(idx):\n')
     fh.write('    if not isinstance(idx, int):\n')
     fh.write('        raise ValueError\n')
