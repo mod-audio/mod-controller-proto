@@ -251,6 +251,12 @@
 //HOST action: -
 #define CMD_RESTORE                   "restore"
 
+// send display data to mod-ui <index 0 to 8> <data>
+//response: `r 0`
+//HMI action: send display data to mod-ui, 8 messages containing 128 hexadecimal numbers representing 8 vertical pixels
+//HOST action: generate a screenshot to be used for manuals and wiki articles
+#define CMD_SCREENSHOT               "screenshot %i %s"
+
 // resp <status> ...
 //response: -
 //HMI action: -
@@ -622,9 +628,9 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 ********************************
 */
 
-#define COMMAND_COUNT_DUO   84
-#define COMMAND_COUNT_DUOX  86
-#define COMMAND_COUNT_DWARF 81
+#define COMMAND_COUNT_DUO   85
+#define COMMAND_COUNT_DUOX  87
+#define COMMAND_COUNT_DWARF 82
 
 /*
 ********************************
