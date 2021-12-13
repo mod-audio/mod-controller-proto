@@ -77,7 +77,8 @@ CMD_ARGS = {
         'sys_usb': [int],
         'sys_mnr': [int],
         'sys_rbt': [],
-        'sys_led': [int,int,],
+        'sys_lbl': [int,int,int,int],
+        'sys_lbh': [int,int,int],
         'sys_nam': [int,str],
         'sys_uni': [int,str],
         'sys_val': [int,str],
@@ -180,7 +181,8 @@ CMD_SYS_SERIAL                    = 'sys_ser'
 CMD_SYS_USB_MODE                  = 'sys_usb'
 CMD_SYS_NOISE_REMOVAL             = 'sys_mnr'
 CMD_SYS_REBOOT                    = 'sys_rbt'
-CMD_SYS_CHANGE_LED                = 'sys_led'
+CMD_SYS_CHANGE_LED_BLINK          = 'sys_lbl'
+CMD_SYS_CHANGE_LED_BRIGHTNESS     = 'sys_lbh'
 CMD_SYS_CHANGE_NAME               = 'sys_nam'
 CMD_SYS_CHANGE_UNIT               = 'sys_uni'
 CMD_SYS_CHANGE_VALUE              = 'sys_val'
@@ -400,8 +402,10 @@ def cmd_to_str(cmd):
         return "CMD_SYS_NOISE_REMOVAL"
     if cmd == "sys_rbt":
         return "CMD_SYS_REBOOT"
-    if cmd == "sys_led":
-        return "CMD_SYS_CHANGE_LED"
+    if cmd == "sys_lbl":
+        return "CMD_SYS_CHANGE_LED_BLINK"
+    if cmd == "sys_lbh":
+        return "CMD_SYS_CHANGE_LED_BRIGHTNESS"
     if cmd == "sys_nam":
         return "CMD_SYS_CHANGE_NAME"
     if cmd == "sys_uni":
