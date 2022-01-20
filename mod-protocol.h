@@ -491,6 +491,24 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 //HOST action: changes the gain in alsamixer <size arguments> <value>
 #define CMD_SYS_HP_GAIN                 "sys_ghp %02x %f"
 
+//send CV input mode
+//response: -
+//HMI action: -
+//HOST action: changes the CV input mode in alsamixer <size arguments> <value>
+#define CMD_SYS_CVI_MODE                "sys_cvi %02x %i"
+
+//send expression port mode
+//response: -
+//HMI action: -
+//HOST action: changes the expression input mode in alsamixer <size arguments> <value>
+#define CMD_SYS_EXP_MODE                "sys_exp %02x %i"
+
+//send CV output mode
+//response: -
+//HMI action: -
+//HOST action: changes the CV output mode in alsamixer <size arguments> <value>
+#define CMD_SYS_CVO_MODE               "sys_cvo %02x %i"
+
 //send noisegate channel value
 //response: if no argument for channel is givin, the current channel is returned
 //HMI action: -
@@ -634,9 +652,9 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 ********************************
 */
 
-#define COMMAND_COUNT_DUO   86
-#define COMMAND_COUNT_DUOX  88
-#define COMMAND_COUNT_DWARF 83
+#define COMMAND_COUNT_DUO   89
+#define COMMAND_COUNT_DUOX  91
+#define COMMAND_COUNT_DWARF 86
 
 /*
 ********************************

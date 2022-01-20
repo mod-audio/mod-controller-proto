@@ -62,6 +62,9 @@ CMD_ARGS = {
         'save_pot_cal': [int,int],
         'sys_gio': [int,int,float],
         'sys_ghp': [float],
+        'sys_cvi': [int],
+        'sys_exp': [int],
+        'sys_cvo': [int],
         'sys_ngc': [int],
         'sys_ngt': [int],
         'sys_ngd': [int],
@@ -166,6 +169,9 @@ CMD_SELFTEST_SKIP_CONTROL         = 'control_bad_skip'
 CMD_SELFTEST_SAVE_POT_CALIBRATION = 'save_pot_cal'
 CMD_SYS_GAIN                      = 'sys_gio'
 CMD_SYS_HP_GAIN                   = 'sys_ghp'
+CMD_SYS_CVI_MODE                  = 'sys_cvi'
+CMD_SYS_EXP_MODE                  = 'sys_exp'
+CMD_SYS_CVO_MODE                  = 'sys_cvo'
 CMD_SYS_NG_CHANNEL                = 'sys_ngc'
 CMD_SYS_NG_THRESHOLD              = 'sys_ngt'
 CMD_SYS_NG_DECAY                  = 'sys_ngd'
@@ -372,6 +378,12 @@ def cmd_to_str(cmd):
         return "CMD_SYS_GAIN"
     if cmd == "sys_ghp":
         return "CMD_SYS_HP_GAIN"
+    if cmd == "sys_cvi":
+        return "CMD_SYS_CVI_MODE"
+    if cmd == "sys_exp":
+        return "CMD_SYS_EXP_MODE"
+    if cmd == "sys_cvo":
+        return "CMD_SYS_CVO_MODE"
     if cmd == "sys_ngc":
         return "CMD_SYS_NG_CHANNEL"
     if cmd == "sys_ngt":
