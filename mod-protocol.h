@@ -143,6 +143,12 @@
 //HOST action: -
 #define CMD_PEDALBOARD_NAME_SET       "pn %s ..."
 
+//set the current active pedalboard within the current bank, send whenever it changed outside of the HMI
+//response: `r 0`
+//HMI action: change the active pedalboard and possibly request a new list
+//HOST action: -
+#define CMD_PEDALBOARD_CHANGE      "pchng %i"
+
 // pedalboard <bank_id> <pedalboard_uid>
 //response: `r 0`
 //HMI action: -
@@ -652,9 +658,9 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 ********************************
 */
 
-#define COMMAND_COUNT_DUO   89
-#define COMMAND_COUNT_DUOX  91
-#define COMMAND_COUNT_DWARF 86
+#define COMMAND_COUNT_DUO   90
+#define COMMAND_COUNT_DUOX  92
+#define COMMAND_COUNT_DWARF 87
 
 /*
 ********************************

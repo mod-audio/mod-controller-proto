@@ -26,6 +26,7 @@ CMD_ARGS = {
         'br': [int,int,int],
         'p': [int,int,int],
         'pn': [str,],
+        'pchng': [int],
         'pb': [int,str],
         'pr': [],
         'ps': [],
@@ -133,6 +134,7 @@ CMD_ADD_PBS_TO_BANK               = 'ba'
 CMD_REORDER_PBS_IN_BANK           = 'br'
 CMD_PEDALBOARDS                   = 'p'
 CMD_PEDALBOARD_NAME_SET           = 'pn'
+CMD_PEDALBOARD_CHANGE             = 'pchng'
 CMD_PEDALBOARD_LOAD               = 'pb'
 CMD_PEDALBOARD_RESET              = 'pr'
 CMD_PEDALBOARD_SAVE               = 'ps'
@@ -306,6 +308,8 @@ def cmd_to_str(cmd):
         return "CMD_PEDALBOARDS"
     if cmd == "pn":
         return "CMD_PEDALBOARD_NAME_SET"
+    if cmd == "pchng":
+        return "CMD_PEDALBOARD_CHANGE"
     if cmd == "pb":
         return "CMD_PEDALBOARD_LOAD"
     if cmd == "pr":
