@@ -87,7 +87,7 @@ CMD_ARGS = {
         'sys_uni': [int,str],
         'sys_val': [int,str],
         'sys_ind': [int,float],
-        'sys_pop': [int,str,str],
+        'sys_pop': [int,int,str,str],
         'sys_pch': [int],
         'sys_spc': [int],
     },
