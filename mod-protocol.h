@@ -640,6 +640,12 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 //HOST action: -
 #define CMD_SYS_CHANGE_WIDGET_INDICATOR   "sys_ind %02x %i %f"
 
+// unit set <assignment_id> <header text> <popup text>
+//response: `r 0`
+//HMI action: launches a temporary popup with plugin info
+//HOST action: -
+#define CMD_SYS_LAUNCH_POPUP              "sys_pop %02x %i %s %s"
+
 // notifies the system the user changed a page <new_page_id>
 //response: `r 0`
 //HMI action: -
@@ -658,9 +664,9 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 ********************************
 */
 
-#define COMMAND_COUNT_DUO   90
-#define COMMAND_COUNT_DUOX  92
-#define COMMAND_COUNT_DWARF 87
+#define COMMAND_COUNT_DUO   91
+#define COMMAND_COUNT_DUOX  93
+#define COMMAND_COUNT_DWARF 88
 
 /*
 ********************************
