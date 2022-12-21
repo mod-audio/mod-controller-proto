@@ -93,17 +93,17 @@
 //HOST action: sends back a control_add command with new control page data
 #define CMD_CONTROL_PAGE              "ncp %i %i %i"
 
-// initial_state <amount of pb's> <page_min> <page_max> <bank_id> <pb_id> [current_pedalboards_list]
+// initial_state <amount of pb's> <page_min> <page_max> <user_bank> <bank_id> <pb_id> [current_pedalboards_list]
 //response: `r 0`
 //HMI action: save initial pedalboard and bank data in static memory
 //HOST action: -
-#define CMD_INITIAL_STATE             "is %i %i %i %i %i %s %s ..."
+#define CMD_INITIAL_STATE             "is %i %i %i %i %i %i %s %s ..."
 
-// banks <direction> <current banks hover id>
+// banks <user_bank> <direction> <current banks hover id>
 //response: `new banks list, with updated items`
 //HMI action: -
 //HOST action: returns a new page of banks
-#define CMD_BANKS                     "b %i %i"
+#define CMD_BANKS                     "b %i %i %i"
 
 // bank new <bank_name>
 //response: -
@@ -131,11 +131,11 @@
 //HOST action: reorder the pb in a bank
 #define CMD_REORDER_PBS_IN_BANK       "br %i %i %i"
 
-// pedalboards <up/down page> <current page index> <bank_uid>
+// pedalboards <up/down page> <current page index> <user_bank> <bank_uid>
 //response: `new pedalboard list, with updated items`
 //HMI action: -
 //HOST action: returns a new page of pedalboards
-#define CMD_PEDALBOARDS               "p %i %i %i"
+#define CMD_PEDALBOARDS               "p %i %i %i %i"
 
 //set the name of the current pedalboard on the device display
 //response: `r 0`
@@ -149,11 +149,11 @@
 //HOST action: -
 #define CMD_PEDALBOARD_CHANGE      "pchng %i"
 
-// pedalboard <bank_id> <pedalboard_uid>
+// pedalboard <user_bank> <bank_id> <pedalboard_uid>
 //response: `r 0`
 //HMI action: -
 //HOST action: loads the requested pedalboard
-#define CMD_PEDALBOARD_LOAD           "pb %i %s"
+#define CMD_PEDALBOARD_LOAD           "pb %i %i %s"
 
 // pedalboard_reset
 //response: `r 0`
