@@ -99,11 +99,11 @@
 //HOST action: -
 #define CMD_INITIAL_STATE             "is %i %i %i %i %i %i %s %s ..."
 
-// banks <user_bank> <direction> <current banks hover id>
+// banks <direction> <current banks hover id>
 //response: `new banks list, with updated items`
 //HMI action: -
 //HOST action: returns a new page of banks
-#define CMD_BANKS                     "b %i %i %i"
+#define CMD_BANKS                     "b %i %i"
 
 // bank new <bank_name>
 //response: -
@@ -131,11 +131,11 @@
 //HOST action: reorder the pb in a bank
 #define CMD_REORDER_PBS_IN_BANK       "br %i %i %i"
 
-// pedalboards <up/down page> <current page index> <user_bank> <bank_uid>
+// pedalboards <up/down page> <current page index> <bank_uid>
 //response: `new pedalboard list, with updated items`
 //HMI action: -
 //HOST action: returns a new page of pedalboards
-#define CMD_PEDALBOARDS               "p %i %i %i %i"
+#define CMD_PEDALBOARDS               "p %i %i %i"
 
 //set the name of the current pedalboard on the device display
 //response: `r 0`
@@ -149,11 +149,11 @@
 //HOST action: -
 #define CMD_PEDALBOARD_CHANGE      "pchng %i"
 
-// pedalboard <user_bank> <bank_id> <pedalboard_uid>
+// pedalboard <bank_uid> <pedalboard_uid>
 //response: `r 0`
 //HMI action: -
 //HOST action: loads the requested pedalboard
-#define CMD_PEDALBOARD_LOAD           "pb %i %i %s"
+#define CMD_PEDALBOARD_LOAD           "pb %i %s"
 
 // pedalboard_reset
 //response: `r 0`
