@@ -93,14 +93,14 @@
 //HOST action: sends back a control_add command with new control page data
 #define CMD_CONTROL_PAGE              "ncp %i %i %i"
 
-// initial_state <amount of pb's> <page_min> <page_max> <user_bank> <bank_id> <pb_id> [current_pedalboards_list]
+// initial_state <amount of pb's> <page_min> <page_max> <bank_id> <bank_flags> <pb_index> [current_pedalboards_list: index, flags, quoted title]
 //response: `r 0`
 //HMI action: save initial pedalboard and bank data in static memory
 //HOST action: -
-#define CMD_INITIAL_STATE             "is %i %i %i %i %i %i %s %s ..."
+#define CMD_INITIAL_STATE             "is %i %i %i %i %i %i ..."
 
 // banks <direction> <current banks hover id>
-//response: `new banks list, with updated items`
+//response: `new banks list, with updated items` (uid:int, flags, quoted title)
 //HMI action: -
 //HOST action: returns a new page of banks
 #define CMD_BANKS                     "b %i %i"
@@ -117,7 +117,7 @@
 //HOST action: deletes indicated bank
 #define CMD_BANK_DELETE               "bd %i"
 
-// add pedalboards to bank <bank_id_to_add_to> <bank_id_pbs_originate_from> <pb uids>
+// add pedalboards to bank <bank_uid_to_add_to> <bank_uid_pbs_originate_from> <pb_uids:str>
 //response: -
 //HMI action: -
 //HOST action: add the pb uids to the bank
@@ -125,14 +125,14 @@
 //             bank uids are passed
 #define CMD_ADD_PBS_TO_BANK           "ba %i %i %s ..."
 
-// reorder the pb within a bank  <bank_uid> <pb_to_move_uid> <index_to_move_to>
+// reorder the pb within a bank <bank_uid> <pb_index_to_move> <index_to_move_to>
 //response: -
 //HMI action: -
 //HOST action: reorder the pb in a bank
 #define CMD_REORDER_PBS_IN_BANK       "br %i %i %i"
 
 // pedalboards <up/down page> <current page index> <bank_uid>
-//response: `new pedalboard list, with updated items`
+//response: `new pedalboard list, with updated items` (uid:str, flags, quoted title)
 //HMI action: -
 //HOST action: returns a new page of pedalboards
 #define CMD_PEDALBOARDS               "p %i %i %i"
@@ -149,7 +149,7 @@
 //HOST action: -
 #define CMD_PEDALBOARD_CHANGE      "pchng %i"
 
-// pedalboard <bank_uid> <pedalboard_uid>
+// pedalboard <bank_uid:int> <pb_uid:str>
 //response: `r 0`
 //HMI action: -
 //HOST action: loads the requested pedalboard
@@ -179,7 +179,7 @@
 //HOST action: -
 #define CMD_PEDALBOARD_CLEAR          "pcl"
 
-// pedalboard delete <bank_id> <pb_id>
+// pedalboard delete <bank_uid> <pb_index>
 //response: -
 //HMI action: -
 //HOST action: deletes indicated pedalboard
@@ -685,6 +685,16 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
     Flags/bitmasks definitions
 ********************************
 */
+
+//bank navigation bitmasks
+#define FLAG_BANK_FACTORY               0x1
+#define FLAG_BANK_READ_ONLY             0x2
+#define FLAG_BANK_DIVIDER               0x4
+
+//pedalboard navigation bitmasks
+#define FLAG_PEDALBOARD_FACTORY         0x1
+#define FLAG_PEDALBOARD_READ_ONLY       0x2
+#define FLAG_PEDALBOARD_TRIAL_PLUGINS   0x4
 
 //command bitmask definitions
 #define FLAG_CONTROL_BYPASS             0x001

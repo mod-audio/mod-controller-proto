@@ -18,7 +18,7 @@ CMD_ARGS = {
         'g': [int],
         's': [int,float],
         'ncp': [int,int,int],
-        'is': [int,int,int,int,int,int,str,str,],
+        'is': [int,int,int,int,int,int,],
         'b': [int,int],
         'bn': [str,],
         'bd': [int],
@@ -219,6 +219,14 @@ BANK_FUNC_TRUE_BYPASS     = 1
 BANK_FUNC_PEDALBOARD_NEXT = 2
 BANK_FUNC_PEDALBOARD_PREV = 3
 BANK_FUNC_COUNT           = 4
+
+FLAG_BANK_FACTORY             = 0x1
+FLAG_BANK_READ_ONLY           = 0x2
+FLAG_BANK_DIVIDER             = 0x4
+
+FLAG_PEDALBOARD_FACTORY       = 0x1
+FLAG_PEDALBOARD_READ_ONLY     = 0x2
+FLAG_PEDALBOARD_TRIAL_PLUGINS = 0x4
 
 FLAG_CONTROL_BYPASS           = 0x001
 FLAG_CONTROL_TAP_TEMPO        = 0x002
