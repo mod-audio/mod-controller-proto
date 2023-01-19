@@ -686,15 +686,11 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 ********************************
 */
 
-//bank navigation bitmasks
-#define FLAG_BANK_FACTORY               0x1
-#define FLAG_BANK_READ_ONLY             0x2
-#define FLAG_BANK_DIVIDER               0x4
-
-//pedalboard navigation bitmasks
-#define FLAG_PEDALBOARD_FACTORY         0x1
-#define FLAG_PEDALBOARD_READ_ONLY       0x2
-#define FLAG_PEDALBOARD_TRIAL_PLUGINS   0x4
+//bank and pedlboard navigation bitmasks
+#define FLAG_NAVIGATION_FACTORY         0x1
+#define FLAG_NAVIGATION_READ_ONLY       0x2
+#define FLAG_NAVIGATION_DIVIDER         0x4
+#define FLAG_NAVIGATION_TRIAL_PLUGINS   0x8
 
 //command bitmask definitions
 #define FLAG_CONTROL_BYPASS             0x001
