@@ -251,6 +251,12 @@
 //HOST action: changes the tuner input source
 #define CMD_TUNER_INPUT               "ti %i"
 
+// tuner_reference_frequency <frequency>
+//response: `r 0`
+//HMI action: -
+//HOST action: changes the tuner A reference frequency
+#define CMD_TUNER_REF_FREQ            "tr %i"
+
 // reboot in restore mode
 //response: `r 0`
 //HMI action: boot into restore mode
@@ -664,9 +670,9 @@ Almost all menu items are also setable via the MENU_ITEM_CHANGE command, but som
 ********************************
 */
 
-#define COMMAND_COUNT_DUO   91
-#define COMMAND_COUNT_DUOX  93
-#define COMMAND_COUNT_DWARF 88
+#define COMMAND_COUNT_DUO   92
+#define COMMAND_COUNT_DUOX  94
+#define COMMAND_COUNT_DWARF 89
 
 /*
 ********************************
